@@ -1,9 +1,9 @@
 import React from 'react'
 
-function index() {
+function Sidebar() {
   return (
-    <div>index</div>
+    <div>Sidebar</div>
   )
 }
 
-export default index
+export default Sidebar    
