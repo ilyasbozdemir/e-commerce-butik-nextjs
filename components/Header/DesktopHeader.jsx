@@ -7,7 +7,7 @@ import Navbar from "../Navbar";
 import { linkItems } from "../../constants/linkItems";
 import SearchBox from "./Shared/SearchBox";
 import Logo from "../Logo";
-import { HiShoppingCart } from "react-icons/hi";
+import { AiOutlineUser ,AiOutlineShoppingCart} from "react-icons/ai";
 
 function DesktopHeader() {
   const _hover = {}
@@ -82,21 +82,25 @@ function DesktopHeader() {
                       color='#fff'
                       variant='unstyled'
                       p={2}
-                      borderRadius="20px">
-                      Giriş Yap
+                      borderRadius="17px">
+                      <HStack gap={1}>
+                        <Icon as={AiOutlineUser} />
+                        <Text fontSize={'sm'}> Giriş Yap</Text>
+                      </HStack>
+
                     </Button>
                     <Button bg='#7c3aed'
                       color='#fff'
                       variant='unstyled'
                       p={2}
-                      borderRadius="20px">
-                      <HStack gap={2}>
-                        <Icon as={HiShoppingCart} />
-                        <>0</>
+                      borderRadius="17px">
+                      <HStack gap={1}>
+                        <Icon as={AiOutlineShoppingCart} />
+                        <Text fontSize={'sm'}>0</Text>
                       </HStack>
                     </Button>
                   </Stack>
-                  
+
                 }
 
               </Flex>
@@ -108,6 +112,7 @@ function DesktopHeader() {
           <Flex w={'100%'} h={50} justifyContent='center'>
             {linkItems.map((link, i) => (
               <Navbar key={'eb_' + i} link={link} />
+              
             ))}
           </Flex>
         </>
