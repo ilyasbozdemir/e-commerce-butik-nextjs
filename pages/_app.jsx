@@ -1,58 +1,50 @@
+// pages/_app.js
+import { MainContext } from "../contexts/MainContext";
 import { ChakraProvider } from "@chakra-ui/react";
-import Layout from "../layout/index";
+import AdminLayout from "../layouts/AdminLayout";
+import UserLayout from "../layouts/UserLayout";
+import ErrorLayout from "../layouts/ErrorLayout";
 import theme from "../src/theme";
-import App from "next/app";
+import React from "react";
+import Router from "next/router";
+import { useRouter } from "next/router";
+import ProgressBar from "@badrap/bar-of-progress";
 
-class MyApp extends App {
-  static async getInitialProps({ Component, ctx }) {
-    let pageProps = {};
+function MyApp({ Component, pageProps, statusCode }) {
+  const data = {};
+  let Layout;
+  const router = useRouter();
 
-    try {
-      if (Component.getInitialProps) {
-        pageProps = await Component.getInitialProps(ctx);
-      }
-    } catch (err) {
-      console.error(err);
-      ctx.statusCode = err.statusCode || 500;
-      pageProps.statusCode = ctx.statusCode;
-    }
-
-    return { pageProps };
+  if (router.pathname === "/") {
+    Layout = UserLayout;
+  } else if (router.pathname.startsWith("/admin")) {
+    Layout = AdminLayout;
+  }
+  else {
+    Layout = UserLayout;
   }
 
-  componentDidMount() {
-    // Bu, hydration hatasını önlemek için gerekli kod parçasıdır.
-    // İlk önce bir bileşen dinamik olarak yüklendiyse, hydrate edilmeli ve işleyicileri atamalıyız.
-    // Bu kod, özellikle getStaticProps/getServerSideProps ile oluşturulmuş bileşenler için gereklidir.
-    if (typeof window !== "undefined") {
-      import("@chakra-ui/react").then(() => {
-        // Çoklu React render etme hatası önleme için:
-        // eslint-disable-next-line no-underscore-dangle
-        // window._REACT_DEVTOOLS_GLOBAL_HOOK_.inject = function () {};
-      });
-    }
-  }
+  const progress = new ProgressBar({
+    size: 2,
+    color: "#bd1a30",
+    className: "bar-of-progress",
+    delay: 100,
+  });
 
-  render() {
-    const { Component, pageProps } = this.props;
+  Router.events.on("routeChangeStart", progress.start);
+  Router.events.on("routeChangeComplete", progress.finish);
+  Router.events.on("routeChangeError", progress.finish);
 
-    return (
-      <>
-        {pageProps.statusCode ? (
-          <>
-            {/* <Page404 statusCode={pageProps.statusCode} /> */}
-          </>
-
-        ) : (
-          <ChakraProvider theme={theme}>
-            <Layout>
-              <Component {...pageProps} />
-            </Layout>
-          </ChakraProvider>
-        )}
-      </>
-    );
-  }
+  return (
+    <ChakraProvider theme={theme}>
+      <MainContext.Provider value={data}>
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
+      </MainContext.Provider>
+    </ChakraProvider>
+  );
 }
+
 
 export default MyApp;
