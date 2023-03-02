@@ -1,10 +1,14 @@
-import { Divider, Stack } from "@chakra-ui/react";
-import React, { useState, useEffect } from "react";
-import HeaderBody from "./Sections/HeaderBody";
-import HeaderBottom from "./Sections/HeaderBottom";
-import { Flex, Spacer, useDisclosure, Icon, HStack, Text, Button } from "@chakra-ui/react";
+import { Divider, flexbox, Stack } from "@chakra-ui/react";
+import React from "react";
+import { Flex, Spacer, Icon, HStack, Text, Button } from "@chakra-ui/react";
 import { SiChatbot } from "react-icons/si";
 import Link from "next/link";
+import Navbar from "../Navbar";
+import { linkItems } from "../../constants/linkItems";
+import SearchBox from "./Shared/SearchBox";
+import Logo from "../Logo";
+import { HiShoppingCart } from "react-icons/hi";
+
 function DesktopHeader() {
   const _hover = {}
   return (
@@ -60,9 +64,53 @@ function DesktopHeader() {
           </Flex>
         </>
         <Divider />
-        <HeaderBody />
+        <>
+          <Flex justifyContent={"space-between"}>
+            <HStack mx={3}>
+              <Logo />
+            </HStack>
+            <HStack>
+              <SearchBox />
+            </HStack>
+            <HStack>
+              <Flex>
+                {
+
+                  <Stack direction='row' spacing={4} align='center'>
+                    <Button
+                      bg='#03C988'
+                      color='#fff'
+                      variant='unstyled'
+                      p={2}
+                      borderRadius="20px">
+                      Giriş Yap
+                    </Button>
+                    <Button bg='#7c3aed'
+                      color='#fff'
+                      variant='unstyled'
+                      p={2}
+                      borderRadius="20px">
+                      <HStack gap={2}>
+                        <Icon as={HiShoppingCart} />
+                        <>0</>
+                      </HStack>
+                    </Button>
+                  </Stack>
+                  
+                }
+
+              </Flex>
+            </HStack>
+          </Flex>
+        </>
         <Divider />
-        <HeaderBottom />
+        <>
+          <Flex w={'100%'} h={50} justifyContent='center'>
+            {linkItems.map((link, i) => (
+              <Navbar key={'eb_' + i} link={link} />
+            ))}
+          </Flex>
+        </>
       </Stack>
     </>
   );

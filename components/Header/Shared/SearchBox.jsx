@@ -21,7 +21,7 @@ function SearchBox() {
           inputData != '' ?
             <>
               <InputRightElement width='4.5rem'>
-                <Button variant='unstyled' h='1.75rem' size='sm' onClick={handleClick}>
+                <Button variant='unstyled' h='1.75rem' size='sm' onClick={handleClick} borderRadius="20px">
                   Temizle
                 </Button>
               </InputRightElement>
