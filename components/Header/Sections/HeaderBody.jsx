@@ -1,29 +1,11 @@
-import dynamic from 'next/dynamic';
-import { Flex, HStack } from "@chakra-ui/react";
-import React,{ useState } from "react"
+import { Flex, HStack, Stack } from "@chakra-ui/react";
+import React, { useState, useEffect } from "react"
 import Logo from "../../Logo";
-const SearchBox = dynamic(
-  () => import('../Shared/SearchBox'),
-  {
-    ssr: false,
-    loading: () => <Placeholder />
-  }
-);
+import SearchBox from "../Shared/SearchBox";
+import { Button } from '@chakra-ui/react'
 
-function Placeholder() {
-  const [showPlaceholder, setShowPlaceholder] = useState(true);
-
-  // Placeholder'da gösterilecek öğeler burada
-  return (
-    <>
-      {showPlaceholder && (
-        <div style={{ width: "200px", height: "30px", backgroundColor: "gray", borderRadius: "10px", marginBottom: "10px" }}></div>
-      )}
-    </>
-  )
-}
 function HeaderBody() {
-  const [showPlaceholder, setShowPlaceholder] = useState(true);
+  const [searchBoxLoaded, setSearchBoxLoaded] = useState(false);
 
   return (
     <>
@@ -32,19 +14,22 @@ function HeaderBody() {
           <Logo />
         </HStack>
         <HStack>
-          <>
-            <>
-              {typeof window !== 'undefined' ? (
-                <SearchBox />
-              ) : (
-                <div>Loading...</div>
-              )}
-            </>
-          </>
+          <SearchBox />
         </HStack>
         <HStack>
           <Flex>
-          integration
+            {
+              <Stack direction='row' spacing={4} align='center'>
+                <Button bg='#03C988' color='#fff' variant='ghost'>
+                  Button
+                </Button>
+                <Button bg='#1C82AD' color='#fff' variant='ghost'>
+                  Button
+                </Button>
+              </Stack>
+            }
+
+
           </Flex>
         </HStack>
       </Flex>

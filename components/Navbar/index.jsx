@@ -32,8 +32,8 @@ function Navbar(props) {
           <Text sx={{
             '.nav-item:hover &': {
               borderBottom: "solid",
-              borderBottomColor: "#7928CA",
-              color: "#7928CA",
+              borderBottomColor: "#975ff5",
+              color: "#975ff5",
             },
           }}>
             {label}

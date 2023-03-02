@@ -14,17 +14,15 @@ export default function HomePage() {
     description:
       `Elbise ,Tesettür Giyim  daha aradığın ve daha fazla indirimli ürün en uygun fiyatlar ve kampanyalarla Eflatun Butik'te.`,
     name: "",
-    keywords:''
+    keywords: ''
   });
-  const desc = site.description;
-  const keywords = ``
-  const pageTitle = site.title
+
 
   return (
     <>
       <>
         <MetaHead
-          pageTitle= {site.title}
+          pageTitle={site.title}
           description={site.description}
           keywords={site.keywords}
         />
@@ -32,13 +30,14 @@ export default function HomePage() {
       <>
         <Suspense fallback={<div>Yükleniyor...</div>}>
           <main>
-            <Stack as='main' w={"full"} p={2}>
+            <Stack as='main' w={"full"} p={2} display={'none'}>
 
               <Box as={'p'} >IGStory</Box>
               <Box as={'p'} >Highlights</Box>
               <Box as={'p'} >Öne Çıkanlar</Box>
               <Box as={'p'} >Çok Satan Ürünler</Box>
               <Box as={'p'} >Showcases</Box>
+              
             </Stack>
           </main>
         </Suspense>

@@ -12,7 +12,7 @@ function Logo() {
           <Link href="/" legacyBehavior>
             <a>
               <Text
-                bgGradient="linear(to-l, #7928CA, #FF0080)"
+                bgGradient="linear(to-l, #645CBB,#4E31AA)"
                 bgClip="text"
                 fontSize="3xl"
                 fontWeight="extrabold"

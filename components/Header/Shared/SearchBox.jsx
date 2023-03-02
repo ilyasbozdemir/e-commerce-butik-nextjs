@@ -1,7 +1,8 @@
 import { Button, Icon, Input, InputGroup, InputRightElement } from "@chakra-ui/react";
 import React from "react";
 import { FiSearch } from "react-icons/fi";
-function SearchBox(props) {
+
+function SearchBox() {
   const [inputData, setInputData] = React.useState('')
   const handleClick = () => setInputData('')
 
@@ -38,4 +39,32 @@ function SearchBox(props) {
   );
 }
 
+SearchBox.getInitialProps = async function () {
+
+  const search_tabs = [
+    {
+      "position": 1,
+      "text": "Finance",
+      "link": "https://www.google.com/finance/quote/BTC-USD?sa=X&ved=2ahUKEwjgmtefnbz9AhWFRaQEHX6UB3wQ_AUoAXoECAEQAw"
+    },
+    {
+      "position": 2,
+      "text": "News",
+      "link": "https://www.google.com/search?q=bitcoin&gl=us&hl=en&source=lnms&tbm=nws&sa=X&ved=2ahUKEwjgmtefnbz9AhWFRaQEHX6UB3wQ_AUoAnoECAEQBA"
+    },
+    {
+      "position": 3,
+      "text": "Images",
+      "link": "https://www.google.com/search?q=bitcoin&gl=us&hl=en&source=lnms&tbm=isch&sa=X&ved=2ahUKEwjgmtefnbz9AhWFRaQEHX6UB3wQ_AUoA3oECAEQBQ"
+    },
+    {
+      "position": 4,
+      "text": "Videos",
+      "link": "https://www.google.com/search?q=bitcoin&gl=us&hl=en&source=lnms&tbm=vid&sa=X&ved=2ahUKEwjgmtefnbz9AhWFRaQEHX6UB3wQ_AUoBHoECAEQBg"
+    }
+  ]
+  return {
+    searchboxData: search_tabs
+  };
+};
 export default SearchBox
