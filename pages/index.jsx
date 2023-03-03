@@ -2,6 +2,11 @@ import { Box, Stack } from "@chakra-ui/react";
 import React, { Suspense } from "react";
 import MetaHead from "../components/MetaHead";
 import { useRouter } from "next/router";
+import HighlightsProducts from '../components/HighlightsProducts'
+import SimpleSlider from '../components/SimpleSlider'
+import BestSellingProducts from '../components/BestSellingProducts'
+
+
 export default function HomePage() {
   const router = useRouter();
   const [currentUrl, setCurrentUrl] = React.useState(router.asPath);
@@ -30,6 +35,7 @@ export default function HomePage() {
       <>
         <Suspense fallback={<div>Yükleniyor...</div>}>
           <main>
+            
             <Stack as='main' w={"full"} p={2} display={'none'}>
 
               <Box as={'p'} >IGStory</Box>
@@ -37,8 +43,14 @@ export default function HomePage() {
               <Box as={'p'} >Öne Çıkanlar</Box>
               <Box as={'p'} >Çok Satan Ürünler</Box>
               <Box as={'p'} >Showcases</Box>
-              
-            </Stack>
+
+            </Stack >
+
+            <Box as='main' w={"full"} p={2}>
+              <SimpleSlider />
+              <HighlightsProducts />
+              <BestSellingProducts/>
+            </Box>
           </main>
         </Suspense>
       </>

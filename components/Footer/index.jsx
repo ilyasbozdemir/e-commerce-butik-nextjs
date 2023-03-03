@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-import React, { useCallback } from "react";
+import React from "react";
 import Logo from "../../components/Logo";
 import { useRouter } from "next/router";
 import Link from "next/link";
@@ -45,7 +45,7 @@ function Footer() {
     setEmail("");
   }
 
-  React.useEffect(() => {}, []);
+  React.useEffect(() => { }, []);
   const toast = useToast();
   return (
     <>
@@ -55,8 +55,8 @@ function Footer() {
         as="footer"
         maxW={"container.lg"}
         color={"white"}
-        _light={{ bg: "blackAlpha.900" }}
-        _dark={{ bg: "blackAlpha.900" }}
+        _light={{ bg: "gray.700" }}
+        _dark={{ bg: "gray.700" }}
         marginTop={10}
       >
         <Divider marginBottom={3} />
@@ -118,7 +118,7 @@ function Footer() {
                   Hesabım
                 </Text>
                 <Stack spacing="2" shouldWrapChildren>
-              
+
                   <Link href="/hesabim">
                     <Button variant="link" color="white" fontSize={[10, 13]}>
                       Hesabım
@@ -227,9 +227,8 @@ function Footer() {
             md: "row",
           }}
           align="center"
-          bg={"blackAlpha.800"}
         >
-          <Text textAlign="center" fontSize="sm" color="subtle">
+          <Text textAlign="center" fontSize="sm">
             Bu websitesi İlyas Bozdemir tarafından geliştirilmiştir.
           </Text>
           <ButtonGroup>
