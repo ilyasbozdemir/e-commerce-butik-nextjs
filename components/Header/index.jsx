@@ -47,7 +47,7 @@ function Header() {
         <Flex display={{ base: "none", md: "initial" }} w={"100%"}>
           <Flex justifyContent={"space-between"} my={2}>
             <HStack>
-              <Stack color={"#645CBB"} fontWeight={"semibold"} fontSize={12}>
+              <Stack fontWeight={"semibold"} fontSize={12}>
                 <Link href="#" passHref>
                   <HStack as="a" spacing={1} direction={"row"}>
                     <Icon as={RiWechat2Line} />
@@ -56,7 +56,7 @@ function Header() {
                 </Link>
               </Stack>
 
-              <Stack fontWeight={"semibold"} fontSize={12} color={"#645CBB"}>
+              <Stack fontWeight={"semibold"} fontSize={12}>
                 <Link href="#" passHref>
                   <HStack as="a" spacing={1} direction={"row"}>
                     <Text>Hakkımızda</Text>
@@ -64,7 +64,7 @@ function Header() {
                 </Link>
               </Stack>
 
-              <Stack fontWeight={"semibold"} fontSize={12} color={"#645CBB"}>
+              <Stack fontWeight={"semibold"} fontSize={12}>
                 <Link href="#" passHref>
                   <HStack as="a" spacing={1} direction={"row"}>
                     <Text>Yardım</Text>
@@ -73,21 +73,21 @@ function Header() {
               </Stack>
             </HStack>
             <HStack>
-              <Stack fontWeight={"semibold"} fontSize={12} color={"#645CBB"}>
+              <Stack fontWeight={"semibold"} fontSize={12}>
                 <Link href="#" passHref>
                   <HStack as="a" spacing={1} direction={"row"}>
                     <Text>Kargo Takibi</Text>
                   </HStack>
                 </Link>
               </Stack>
-              <Stack fontWeight={"semibold"} fontSize={12} color={"#645CBB"}>
+              <Stack fontWeight={"semibold"} fontSize={12}>
                 <Link href="#" passHref>
                   <HStack as="a" spacing={1} direction={"row"}>
                     <Text>Siparişlerim</Text>
                   </HStack>
                 </Link>
               </Stack>
-              <Stack fontWeight={"semibold"} fontSize={12} color={"#645CBB"}>
+              <Stack fontWeight={"semibold"} fontSize={12}>
                 <Link href="#" passHref>
                   <HStack as="a" spacing={1} direction={"row"}>
                     <Text>Kampanyalar</Text>
@@ -135,12 +135,10 @@ function Header() {
             p={2}
             borderRadius={15}
           >
-            menuler
+            Menüler
           </Flex>
         </Flex>
-        <Flex display={{ base: "initial", md: "none" }} w={"100%"}>
-          <></>
-        </Flex>
+        <Flex display={{ base: "initial", md: "none" }} w={"100%"}></Flex>
       </Box>
 
       <Stack display={{ base: "initial", md: "none" }} w={"100%"}>
