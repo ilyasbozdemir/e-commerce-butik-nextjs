@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Box, Text } from "@chakra-ui/react";
+import { Box, HStack, Text } from "@chakra-ui/react";
 
 import Link from "next/link";
 
@@ -10,7 +10,7 @@ function Logo() {
       <>
         <Box>
           <Link href="/" legacyBehavior>
-            <a>
+            <HStack as="a" spacing={0}>
               <Text
                 bgGradient="linear(to-l, #645CBB,#7286D3)"
                 bgClip="text"
@@ -18,9 +18,10 @@ function Logo() {
                 fontWeight="extrabold"
                 userSelect={"none"}
               >
-                ilyasbozdemir
+                {"domainname"}
               </Text>
-            </a>
+              <Text fontSize="3xl">{".com"}</Text>
+            </HStack>
           </Link>
         </Box>
       </>
