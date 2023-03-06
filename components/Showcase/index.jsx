@@ -1,16 +1,9 @@
+import React from 'react'
 
-import React from "react";
-import { Flex } from "@chakra-ui/react";
-import Showcase1 from "./Showcase1";
-import Showcase2 from "./Showcase2";
-
-function Showcase() {
+function Showcase () {
   return (
-    <Flex direction={"column"} mb={3}>
-      <Showcase1 />
-      <Showcase2 />
-    </Flex>
-  );
+    <div>Showcases</div>
+  )
 }
 
-export default Showcase;
+export default Showcase 

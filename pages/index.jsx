@@ -1,24 +1,27 @@
-import { Box, Stack } from "@chakra-ui/react";
-import React, { Suspense } from "react";
+import React, { Suspense, useEffect } from "react";
+import { Box, Flex, Stack } from "@chakra-ui/react";
 import MetaHead from "../components/MetaHead";
 import { useRouter } from "next/router";
+import Image from "next/Image";
+
 import HighlightsProducts from '../components/HighlightsProducts'
-import SimpleSlider from '../components/SimpleSlider'
 import BestSellingProducts from '../components/BestSellingProducts'
+
+import Showcase from '../components/Showcase'
+import SimpleSlider from '../components/SimpleSlider'
 
 
 export default function HomePage() {
   const router = useRouter();
   const [currentUrl, setCurrentUrl] = React.useState(router.asPath);
   const [site, setSite] = React.useState({
-    author: "ilyas Bozdemir,bozdemir.ib70@gmail.com",
-    title: "Eflatun Butik",
+    author: `ilyas Bozdemir,bozdemir.ib70@gmail.com`,
+    title: `İlyasBozdemir`,
     url: currentUrl,
-    image: "/favicon.ico",
+    image: "",
     imageAlt: "site-logo-png",
-    description:
-      `Elbise ,Tesettür Giyim  daha aradığın ve daha fazla indirimli ürün en uygun fiyatlar ve kampanyalarla Eflatun Butik'te.`,
-    name: "",
+    description: ``,
+    name: ``,
     keywords: ''
   });
 
@@ -33,26 +36,31 @@ export default function HomePage() {
         />
       </>
       <>
-        <Suspense fallback={<div>Yükleniyor...</div>}>
-          <main>
-            
-            <Stack as='main' w={"full"} p={2} display={'none'}>
+        <Stack as='main' w={"full"} p={2} spacing={3}>
 
-              <Box as={'p'} >IGStory</Box>
-              <Box as={'p'} >Highlights</Box>
-              <Box as={'p'} >Öne Çıkanlar</Box>
-              <Box as={'p'} >Çok Satan Ürünler</Box>
-              <Box as={'p'} >Showcases</Box>
+          <Suspense fallback={<div>Yükleniyor...</div>}>
+            <SimpleSlider />
+          </Suspense>
 
-            </Stack >
+          <Image
+            src={'images/img.png'}
+            width={1920}
+            height={150}
+            draggable={false}
+            unoptimized
+          />
 
-            <Box as='main' w={"full"} p={2}>
-              <SimpleSlider />
-              <HighlightsProducts />
-              <BestSellingProducts/>
-            </Box>
-          </main>
-        </Suspense>
+          <Box>
+            <HighlightsProducts />
+          </Box>
+
+          <Box>
+            <BestSellingProducts />
+          </Box>
+          <Box>
+            <Showcase />
+          </Box>
+        </Stack>
       </>
     </>
   );

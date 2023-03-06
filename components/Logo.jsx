@@ -18,7 +18,7 @@ function Logo() {
                 fontWeight="extrabold"
                 userSelect={"none"}
               >
-                eflatunbutik
+                ilyasbozdemir
               </Text>
             </a>
           </Link>

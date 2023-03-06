@@ -2,6 +2,7 @@ import React from "react";
 
 const Footer = React.lazy(() => import("../components/Footer"));
 const ScrollToTop = React.lazy(() => import("../components/ScrollToTop"));
+const Banner = React.lazy(() => import("../components/Banner"));
 const Header = React.lazy(() => import("../components/Header"));
 const Sidebar = React.lazy(() => import("../components/Sidebar"));
 
@@ -26,15 +27,16 @@ function UserLayout({ children }) {
           </DrawerContent>
         </Drawer>
 
-        {/*= Header =*/}
-        <Header onOpen={onOpen} />
+        <>
 
-        <Box>
+          <Banner />
+          <Header onOpen={onOpen} />
+          <Box p={2}>
+            {children}
+          </Box>
           <ScrollToTop />
-          {/* <CookieContainer />*/}
-          {children}
           <Footer />
-        </Box>
+        </>
       </Box>
     </>
   );

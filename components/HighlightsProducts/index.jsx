@@ -6,4 +6,4 @@ function HighlightsProducts() {
   )
 }
 
-export default HighlightsProducts 
+export default HighlightsProducts

@@ -3,7 +3,6 @@ import { MainContext } from "../contexts/MainContext";
 import { ChakraProvider } from "@chakra-ui/react";
 import AdminLayout from "../layouts/AdminLayout";
 import UserLayout from "../layouts/UserLayout";
-import ErrorLayout from "../layouts/ErrorLayout";
 import theme from "../src/theme";
 import React from "react";
 import Router from "next/router";

@@ -62,7 +62,7 @@ export default async function handler(req, res) {
 
   } catch (error) {
     console.error(error);
-    res.status(500).json(
+    res.status(405).json(
       {
         message:
           "Ödeme işlemi gerçekleştirilemedi.Tekrar deneyiniz."
