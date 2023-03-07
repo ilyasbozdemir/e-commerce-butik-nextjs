@@ -1,4 +1,4 @@
-import dynamic from "next/dynamic";
+import React from "react";
 import {
   Box,
   Divider,
@@ -10,21 +10,16 @@ import {
   Skeleton,
   Button,
 } from "@chakra-ui/react";
-const SearchBox = dynamic(() => import("./SearchBox"), {
-  ssr: false,
-  loading: () => (
-    <Box w="full" position="relative">
-      <Skeleton startColor="pink.500" endColor="orange.500" w="full" />
-    </Box>
-  ),
-});
 
-import React from "react";
 import Link from "next/link";
 import Logo from "../Logo";
 import { RiWechat2Line } from "react-icons/ri";
 import { SlBasket, SlBasketLoaded } from "react-icons/sl";
 import { AiOutlineUser } from "react-icons/ai";
+import Navbar from "../../components/Navbar";
+import SearchBox from "./SearchBox";
+import { linkItems } from "../../constants/linkItems";
+
 
 function Header() {
   const [basketItemCount, setBasketItemCount] = React.useState(0);
@@ -103,9 +98,7 @@ function Header() {
             <HStack>
               <Logo />
             </HStack>
-            <HStack>
-              <SearchBox />
-            </HStack>
+            <HStack>{<SearchBox />}</HStack>
 
             <HStack gap={2}>
               <Button bg={"#ECF2FF"} color={"#7b61ff"} borderRadius={15}>
@@ -132,13 +125,20 @@ function Header() {
             my={1}
             bg={"#865DFF"}
             color={"#fff"}
-            p={2}
+            px={2}
             borderRadius={15}
+            w={"100%"}
           >
-            Menüler
+            {linkItems.map((link, i) => (
+              <>
+                <Navbar key={"eb_" + i} link={link} />
+              </>
+            ))}
           </Flex>
         </Flex>
-        <Flex display={{ base: "initial", md: "none" }} w={"100%"}></Flex>
+        <Flex display={{ base: "initial", md: "none" }} w={"100%"}>
+          ddsf
+        </Flex>
       </Box>
 
       <Stack display={{ base: "initial", md: "none" }} w={"100%"}>

@@ -9,18 +9,25 @@ function Logo() {
     <>
       <>
         <Box>
-          <Link href="/" legacyBehavior>
+          <Link href="/" legacyBehavior passHref>
             <HStack as="a" spacing={0}>
               <Text
-                bgGradient="linear(to-l, #645CBB,#7286D3)"
+                bgGradient="linear(to-r, #645CBB,#7286D3)"
                 bgClip="text"
                 fontSize="3xl"
                 fontWeight="extrabold"
                 userSelect={"none"}
               >
-                {"domainname"}
+                domainname
               </Text>
-              <Text fontSize="3xl">{".com"}</Text>
+              <Text
+                fontSize="3xl"
+                color={'#f26755'}
+                fontWeight='hairline'
+
+              >
+                .com
+              </Text>
             </HStack>
           </Link>
         </Box>

@@ -1,10 +1,20 @@
 import React from "react";
-
-const Footer = React.lazy(() => import("../components/Footer"));
-const ScrollToTop = React.lazy(() => import("../components/ScrollToTop"));
-const Banner = React.lazy(() => import("../components/Banner"));
-const Header = React.lazy(() => import("../components/Header"));
-const Sidebar = React.lazy(() => import("../components/Sidebar"));
+import Footer from "../components/Footer";
+import ScrollToTop from "../components/ScrollToTop";
+import Banner from "../components/Banner";
+import Sidebar from "../components/Sidebar";
+import dynamic from "next/dynamic";
+const Header = dynamic(
+  () => import('../components/Header'),
+  {
+    ssr: false,
+    loading: () => (
+      <Box w="full"position="relative">
+        loading
+      </Box>
+    )
+  }
+)
 
 import { Box, Drawer, DrawerContent, useDisclosure } from "@chakra-ui/react";
 

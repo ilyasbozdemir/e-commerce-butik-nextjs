@@ -1,23 +1,20 @@
-import React from 'react'
-import dynamic from 'next/dynamic'
+import React from "react";
 import Image from "next/Image";
-import { Box, Skeleton } from '@chakra-ui/react';
+import dynamic from "next/dynamic";
+import { Box } from "@chakra-ui/react";
+
 const Slider = dynamic(
   () => import('react-slick'),
   {
     ssr: false,
     loading: () => (
       <Box w="full" h="300px" position="relative">
-        <Skeleton
-          startColor='pink.500'
-          endColor='orange.500'
-          w="full"
-          h="300px"
-        />
+        loading
       </Box>
     )
   }
 )
+
 
 function SimpleSlider() {
   const [images, setImages] = React.useState([]);
@@ -40,7 +37,7 @@ function SimpleSlider() {
     infinite: true,
     speed: 500,
     slidesToShow: 1,
-    slidesToScroll: 1
+    slidesToScroll: 1,
   };
 
   return (
@@ -57,7 +54,7 @@ function SimpleSlider() {
         ))}
       </Slider>
     </Box>
-  )
+  );
 }
 
 const DynamicSimpleSlider = dynamic(() => Promise.all(
@@ -67,4 +64,4 @@ const DynamicSimpleSlider = dynamic(() => Promise.all(
   ssr: false,
 });
 
-export default DynamicSimpleSlider
+export default DynamicSimpleSlider;

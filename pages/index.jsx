@@ -1,30 +1,26 @@
-import React, { Suspense, useEffect } from "react";
-import { Box, Flex, Stack } from "@chakra-ui/react";
+import React, { Suspense } from "react";
+import { Box, Stack } from "@chakra-ui/react";
 import MetaHead from "../components/MetaHead";
 import { useRouter } from "next/router";
 import Image from "next/Image";
-
-import HighlightsProducts from '../components/HighlightsProducts'
-import BestSellingProducts from '../components/BestSellingProducts'
-
-import Showcase from '../components/Showcase'
-import SimpleSlider from '../components/SimpleSlider'
-
+import HighlightsProducts from "../components/HighlightsProducts";
+import BestSellingProducts from "../components/BestSellingProducts";
+import SimpleSlider from "../components/SimpleSlider";
+import Showcase from "../components/Showcase";
 
 export default function HomePage() {
   const router = useRouter();
   const [currentUrl, setCurrentUrl] = React.useState(router.asPath);
   const [site, setSite] = React.useState({
     author: `ilyas Bozdemir,bozdemir.ib70@gmail.com`,
-    title: `Anasayfa`,
+    title: `Anasayfa | domainname.com`,
     url: currentUrl,
     image: "",
     imageAlt: "site-logo-png",
     description: ``,
     name: ``,
-    keywords: ''
+    keywords: "",
   });
-
 
   return (
     <>
@@ -36,19 +32,16 @@ export default function HomePage() {
         />
       </>
       <>
-        <Stack as='main' w={"full"} p={2} spacing={3}>
-
-          <Suspense fallback={<div>Yükleniyor...</div>}>
-            <SimpleSlider />
-          </Suspense>
-
+        <Stack as="main" w={"full"} p={2} spacing={3}>
           <Image
-            src={'images/img.png'}
+            src={"images/img.png"}
             width={1920}
             height={150}
             draggable={false}
             unoptimized
           />
+
+          <SimpleSlider />
 
           <Box>
             <HighlightsProducts />

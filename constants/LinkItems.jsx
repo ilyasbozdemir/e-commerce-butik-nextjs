@@ -1,6 +1,6 @@
 import { MdOutlineFiberNew } from "react-icons/md";
 import { GiClothes } from "react-icons/gi";
-import { CiDiscount1 } from "react-icons/ci";
+import { HiOutlineArrowTrendingDown } from "react-icons/hi2";
 
 
 export const linkItems = [
@@ -22,13 +22,13 @@ export const linkItems = [
     href: "/triko/",
     childrens: [],
   },
-  /*
+  
   {
     label: "İç Giyim",
     icon: GiClothes,
     href: "/ic-giyim/",
     childrens: [],
-  },*/
+  },
   {
     label: "Üst Giyim",
     icon: GiClothes,
@@ -165,7 +165,7 @@ export const linkItems = [
   },
   {
     label: "İndirim",
-    icon: CiDiscount1,
+    icon: HiOutlineArrowTrendingDown,
     href: "/indirim/",
     childrens: [],
   },
