@@ -56,9 +56,10 @@ export default function Navbar({ link }) {
                     <MenuItem
                       key={i}
                       link={link}
+                      color={'#000'}
                       _hover={{
                         bg: useColorModeValue("gray.100", "gray.700"),
-                        color: "#fff",
+                        color: "#000",
                       }}
                       userSelect={"none"}
                       pr

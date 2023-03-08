@@ -16,6 +16,9 @@ function SearchBox() {
   const handleClick = () => {
     setData("");
   };
+  const searchClick = () => {
+    alert('search')
+  };
   return (
     <HStack p={1}>
       <InputGroup size="md">
@@ -23,11 +26,9 @@ function SearchBox() {
           ref={inputRef}
           pr="5.5rem"
           type={"text"}
-          placeholder="search"
+          placeholder="ürün, kategorileri ara."
           value={data}
           onChange={(e) => setData(e.target.value)}
-          maxLength={20}
-          w={250}
         />
         {data !== "" ? (
           <>
@@ -45,7 +46,7 @@ function SearchBox() {
           <></>
         )}
       </InputGroup>
-      <Button bg={"#ECF2FF"} color={"#7b61ff"}>
+      <Button bg={"#ECF2FF"} color={"#7b61ff"} onClick={searchClick}>
         <Icon as={BiSearch} />
       </Button>
     </HStack>

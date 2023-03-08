@@ -2,7 +2,7 @@ import React from 'react'
 
 function Showcase () {
   return (
-    <div>Showcases</div>
+    <div>Showcases  Component</div>
   )
 }
 

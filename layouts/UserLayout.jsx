@@ -1,22 +1,17 @@
 import React from "react";
+
 import Footer from "../components/Footer";
 import ScrollToTop from "../components/ScrollToTop";
 import Banner from "../components/Banner";
 import Sidebar from "../components/Sidebar";
-import dynamic from "next/dynamic";
-const Header = dynamic(
-  () => import('../components/Header'),
-  {
-    ssr: false,
-    loading: () => (
-      <Box w="full"position="relative">
-        loading
-      </Box>
-    )
-  }
-)
+import Header from "../components/Header";
+import {
+  Box,
+  Drawer,
+  DrawerContent,
+  useDisclosure
+} from "@chakra-ui/react";
 
-import { Box, Drawer, DrawerContent, useDisclosure } from "@chakra-ui/react";
 
 function UserLayout({ children }) {
   const { isOpen, onOpen, onClose } = useDisclosure();

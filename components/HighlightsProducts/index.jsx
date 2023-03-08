@@ -2,7 +2,7 @@ import React from 'react'
 
 function HighlightsProducts() {
   return (
-    <div>HighlightsProducts</div>
+    <div>HighlightsProducts  Component</div>
   )
 }
 

@@ -1,20 +1,8 @@
 import React from "react";
 import Image from "next/Image";
-import dynamic from "next/dynamic";
-import { Box } from "@chakra-ui/react";
 
-const Slider = dynamic(
-  () => import('react-slick'),
-  {
-    ssr: false,
-    loading: () => (
-      <Box w="full" h="300px" position="relative">
-        loading
-      </Box>
-    )
-  }
-)
-
+import { Carousel } from 'react-responsive-carousel';
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
 
 function SimpleSlider() {
   const [images, setImages] = React.useState([]);
@@ -24,7 +12,7 @@ function SimpleSlider() {
       const images = [];
       for (let i = 0; i < 5; i++) {
         const url = `https://picsum.photos/1920/514?random=${i}`;
-        images.push(url);
+        images.push({ src: url, legend: 'image_' + i });
       }
       setImages(images);
     };
@@ -33,35 +21,35 @@ function SimpleSlider() {
   }, []);
 
   const settings = {
-    dots: false,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
+    showStatus: false,
+    showArrows: true,
+    infiniteLoop: true,
+    showThumbs: false,
+    autoPlay: true,
+    interval: 3000,
+    transitionTime: 1000
   };
 
   return (
-    <Box borderRadius={25}>
-      <Slider {...settings}>
-        {images.map((src, index) => (
-          <Image
-            key={index}
-            src={src}
-            width={1920}
-            height={514}
-            draggable={false}
-          />
+    <>
+      <Carousel id={'carousel'}  {...settings}>
+        {images.map((image, index) => (
+          <>
+            <Image
+              key={index}
+              src={image.src}
+              alt={image.legend}
+
+              width={1920}
+              height={514}
+            />
+            <p className="legend">{image.legend}</p>
+          </>
         ))}
-      </Slider>
-    </Box>
+      </Carousel >
+    </>
   );
 }
 
-const DynamicSimpleSlider = dynamic(() => Promise.all(
-  [import('slick-carousel/slick/slick.css'),
-  import('slick-carousel/slick/slick-theme.css')])
-  .then(() => SimpleSlider), {
-  ssr: false,
-});
 
-export default DynamicSimpleSlider;
+export default SimpleSlider;

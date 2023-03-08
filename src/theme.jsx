@@ -14,7 +14,7 @@ const theme = extendTheme({
   config: {
     initialColorMode: "system",
     useSystemColorMode: true,
-    cssVarPrefix: "guven-otel",
+    cssVarPrefix: "e-commerce-butik",
   },
   colors: {
     transparent: "transparent",

@@ -13,13 +13,14 @@ import {
 
 import Link from "next/link";
 import Logo from "../Logo";
+
+import Navbar from "../../components/Navbar";
+import { linkItems } from "../../constants/linkItems";
+import SearchBox from "./SearchBox";
+
 import { RiWechat2Line } from "react-icons/ri";
 import { SlBasket, SlBasketLoaded } from "react-icons/sl";
 import { AiOutlineUser } from "react-icons/ai";
-import Navbar from "../../components/Navbar";
-import SearchBox from "./SearchBox";
-import { linkItems } from "../../constants/linkItems";
-
 
 function Header() {
   const [basketItemCount, setBasketItemCount] = React.useState(0);

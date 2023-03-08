@@ -22,7 +22,6 @@ function Logo() {
               </Text>
               <Text
                 fontSize="3xl"
-                color={'#f26755'}
                 fontWeight='hairline'
 
               >
