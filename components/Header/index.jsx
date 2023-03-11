@@ -4,26 +4,14 @@ import {
   Divider,
   Flex,
   Stack,
-  Text,
-  Icon,
-  HStack,
-  Skeleton,
-  Button,
 } from "@chakra-ui/react";
 
-import Link from "next/link";
-import Logo from "../Logo";
 
-import Navbar from "../../components/Navbar";
-import { linkItems } from "../../constants/linkItems";
-import SearchBox from "./SearchBox";
-
-import { RiWechat2Line } from "react-icons/ri";
-import { SlBasket, SlBasketLoaded } from "react-icons/sl";
-import { AiOutlineUser } from "react-icons/ai";
+import HeaderTop from "./HeaderTop";
+import HeaderBody from "./HeaderBody";
+import HeaderBottom from "./HeaderBottom";
 
 function Header() {
-  const [basketItemCount, setBasketItemCount] = React.useState(0);
 
   return (
     <>
@@ -41,101 +29,15 @@ function Header() {
         p={2}
       >
         <Flex display={{ base: "none", md: "initial" }} w={"100%"}>
-          <Flex justifyContent={"space-between"} my={2}>
-            <HStack>
-              <Stack fontWeight={"semibold"} fontSize={12}>
-                <Link href="#" passHref>
-                  <HStack as="a" spacing={1} direction={"row"}>
-                    <Icon as={RiWechat2Line} />
-                    <Text>Canlı Destek</Text>
-                  </HStack>
-                </Link>
-              </Stack>
 
-              <Stack fontWeight={"semibold"} fontSize={12}>
-                <Link href="#" passHref>
-                  <HStack as="a" spacing={1} direction={"row"}>
-                    <Text>Hakkımızda</Text>
-                  </HStack>
-                </Link>
-              </Stack>
-
-              <Stack fontWeight={"semibold"} fontSize={12}>
-                <Link href="#" passHref>
-                  <HStack as="a" spacing={1} direction={"row"}>
-                    <Text>Yardım</Text>
-                  </HStack>
-                </Link>
-              </Stack>
-            </HStack>
-            <HStack>
-              <Stack fontWeight={"semibold"} fontSize={12}>
-                <Link href="#" passHref>
-                  <HStack as="a" spacing={1} direction={"row"}>
-                    <Text>Kargo Takibi</Text>
-                  </HStack>
-                </Link>
-              </Stack>
-              <Stack fontWeight={"semibold"} fontSize={12}>
-                <Link href="#" passHref>
-                  <HStack as="a" spacing={1} direction={"row"}>
-                    <Text>Siparişlerim</Text>
-                  </HStack>
-                </Link>
-              </Stack>
-              <Stack fontWeight={"semibold"} fontSize={12}>
-                <Link href="#" passHref>
-                  <HStack as="a" spacing={1} direction={"row"}>
-                    <Text>Kampanyalar</Text>
-                  </HStack>
-                </Link>
-              </Stack>
-            </HStack>
-          </Flex>
+          <HeaderTop />
 
           <Divider />
-
-          <Flex justifyContent={"space-between"} my={2}>
-            <HStack>
-              <Logo />
-            </HStack>
-            <HStack>{<SearchBox />}</HStack>
-
-            <HStack gap={2}>
-              <Button bg={"#ECF2FF"} color={"#7b61ff"} borderRadius={15}>
-                <HStack gap={2}>
-                  <Icon as={AiOutlineUser} />
-                  <>Giriş Yap</>
-                </HStack>
-              </Button>
-              <Button bg={"#ECF2FF"} color={"#7b61ff"} borderRadius={15}>
-                <HStack gap={2}>
-                  <Icon
-                    as={basketItemCount === 0 ? SlBasket : SlBasketLoaded}
-                  />
-                  <>{basketItemCount}</>
-                </HStack>
-              </Button>
-            </HStack>
-          </Flex>
+          <HeaderBody />
 
           <Divider />
-
-          <Flex
-            justifyContent={"center"}
-            my={1}
-            bg={"#865DFF"}
-            color={"#fff"}
-            px={2}
-            borderRadius={15}
-            w={"100%"}
-          >
-            {linkItems.map((link, i) => (
-              <>
-                <Navbar key={"eb_" + i} link={link} />
-              </>
-            ))}
-          </Flex>
+          <HeaderBottom />
+          
         </Flex>
         <Flex display={{ base: "initial", md: "none" }} w={"100%"}>
           ddsf
