@@ -1,4 +1,4 @@
-//file [dynamic_category].jsx
+
 import Head from "next/head";
 import { categories } from "../constants/categories";
 import { Box, Center, useBreakpointValue } from "@chakra-ui/react";

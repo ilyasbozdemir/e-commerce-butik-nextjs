@@ -13,8 +13,7 @@ function HeaderTop() {
           <Stack fontWeight={"semibold"} fontSize={12}>
             <Link href="/iletisim" passHref>
               <HStack  spacing={1} direction={"row"}>
-                <Icon as={RiWechat2Line} />
-                <Text>Canlı Destek</Text>
+                <Text>İletişim</Text>
               </HStack>
             </Link>
           </Stack>

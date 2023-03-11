@@ -5,7 +5,7 @@ function Showcase() {
   return (
     <>
       <Box>
-
+        [Showcase Component ]
       </Box>
     </>
   )

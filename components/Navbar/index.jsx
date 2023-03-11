@@ -14,44 +14,42 @@ import {
 } from "@chakra-ui/react";
 
 export default function Navbar({ link }) {
-  const { label, href, icon, childrens } = link;
   const { isOpen, onOpen, onClose } = useDisclosure();
-
-  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
-
-  const handleMenuOpen = () => setIsMenuOpen(true);
-  const handleMenuClose = () => setIsMenuOpen(false);
 
   return (
     <>
       <Menu isOpen={isOpen} pos={"relative"} isLazy>
-        <MenuButton
-          mx={1}
-          py={[1, 2, 2]}
-          px={4}
-          _hover={{
-            bg: "gray.400",
-            boxShadow: "0 0 8px rgba(0, 0, 0, 0.3)",
-            transition: "box-shadow 0.3s ease-in-out",
-          }}
-          _expanded={{ bg: "purple.600" }}
-          aria-label={`${label}-button`}
-          fontWeight="500"
-          onMouseEnter={onOpen}
-          onMouseLeave={onClose}
-          onClick={() => { }}
-          textTransform="uppercase"
-          className={"nav-item"}
-        
-        >
-          {label}
-        </MenuButton>
+        <Link href={link.href} passHref>
+          <MenuButton
+            h={'50px'}
+            mx={1}
+            py={[1, 2, 2]}
+            px={4}
+            _hover={{
+              bg: "gray.400",
+              boxShadow: "0 0 8px rgba(0, 0, 0, 0.3)",
+              transition: "box-shadow 0.3s ease-in-out",
+            }}
+            _expanded={{ bg: "purple.600" }}
+            aria-label={`${link.label}-button`}
+            fontWeight="500"
+            onMouseEnter={onOpen}
+            onMouseLeave={onClose}
+            textTransform="uppercase"
+            className={"nav-item"}
+            textAlign={'center'}
+          >
 
-      
+            {link.label}
+          </MenuButton>
+        </Link>
 
-        {childrens.length !== 0 ? (
+
+
+
+        {link.childrens.length !== 0 ? (
           <MenuList onMouseEnter={onOpen} onMouseLeave={onClose}>
-            {childrens.map((link, i) => (
+            {link.childrens.map((link, i) => (
               <HStack>
                 <Link href={link.href} key={i} legacyBehavior passHref>
 

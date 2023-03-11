@@ -53,7 +53,6 @@ function Footer() {
     <>
       <Container
         pos={"relative"}
-        zIndex={150}
         as="footer"
         maxW={"container.lg"}
         color={"white"}

@@ -51,7 +51,8 @@ export default function HomePage() {
       <Head>
         <link rel="canonical" href={site.url} />
         <base href={site.baseUrl} />
-        <meta itemprop="name" content={site.title} />
+        <title>{site.pageTitle}</title>
+        <meta itemprop="name" content={site.pageTitle} />
         <meta itemprop="description" content={site.description} />
         <meta name="description" content={site.description} />
         <meta name="robots" content="index, follow" />
@@ -63,17 +64,17 @@ export default function HomePage() {
         <meta name="publisher" content={site.publisher || `ilyas Bozdemir`} />
 
         <meta name="twitter:card" content="summary" />
-        <meta name="twitter:title" content={site.title} />
+        <meta name="twitter:title" content={site.pageTitle} />
         <meta name="twitter:description" content={site.description} />
         <meta name="twitter:site" content="@Ilyasbzdmr70" />
 
-        <meta name="og:title" content={site.title} />
+        <meta name="og:title" content={site.pageTitle} />
         <meta name="og:description" content={site.description} />
         <meta name="og:type" content="website" />
       </Head>
       <>
-        <Stack as="main" w={"full"} p={2} spacing={3}>
-          <Box id="story" as={"section"} h={50}>
+        <Stack as="main" w={"full"} p={2} spacing={2}>
+          <Box id="story" as={"section"} >
             <Story />
           </Box>
 
@@ -81,36 +82,31 @@ export default function HomePage() {
             <SimpleSlider />
           </Box>
 
-          <Box id="image" as={"section"}>
-
-            {
-              /*
-                <Image
-                          src={"images/img.png"}
-                          width={1920}
-                          height={150}
-                          draggable={false}
-                          priority={true}
-                          unoptimized
-                        />
-               */
-            }
-
-
-          </Box>
-
           <Box zIndex={10} id="BestSellingProducts" as={"section"}>
             <BestSellingProducts />
-          </Box>
-
-          <Box zIndex={10} id="Showcase" as={"section"}>
-            <Showcase />
           </Box>
 
           <Box zIndex={10} id="HighlightsProducts" as={"section"}>
             <HighlightsProducts />
           </Box>
 
+          <Box zIndex={10} id="Showcase" as={"section"}>
+            <Showcase />
+          </Box>
+
+
+          <Box id="image" as={"section"}>
+
+            <Image
+              src={"images/img.png"}
+              width={1920}
+              height={150}
+              draggable={false}
+              priority={true}
+              unoptimized
+            />
+
+          </Box>
 
         </Stack>
       </>

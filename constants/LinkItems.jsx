@@ -22,7 +22,7 @@ export const linkItems = [
     href: "/triko/",
     childrens: [],
   },
-  
+
   {
     label: "İç Giyim",
     icon: GiClothes,
@@ -163,14 +163,8 @@ export const linkItems = [
       },
     ],
   },
-  {
-    label: "İndirim",
-    icon: HiOutlineArrowTrendingDown,
-    href: "/indirim/",
-    childrens: [],
-  },
 ];
 
 
 
-  
+

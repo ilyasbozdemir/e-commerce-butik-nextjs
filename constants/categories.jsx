@@ -141,7 +141,7 @@ export const categories = [
     },
     {
       id: 29,
-      title: "Panpathlonlu Kombin",
+      title: "Pantolonlu Kombin",
       path: "pantolonlu-kombin",
     },
     /*,
