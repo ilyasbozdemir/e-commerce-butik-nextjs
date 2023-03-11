@@ -9,7 +9,6 @@ export default class MyDocument extends Document {
     return (
       <Html lang="tr">
         <Head>
-          <link rel="canonical" href={canonicalUrl} />
           <meta name="theme-color" content={"#fff"} />
           <meta
             name="google-site-verification"

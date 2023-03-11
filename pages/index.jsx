@@ -8,61 +8,110 @@ import BestSellingProducts from "../components/BestSellingProducts";
 import SimpleSlider from "../components/SimpleSlider";
 import Story from "../components/Story";
 import Showcase from "../components/Showcase";
+import Head from "next/head";
 
 export default function HomePage() {
-  const router = useRouter();
-  const [currentUrl, setCurrentUrl] = React.useState(router.asPath);
-  const [site, setSite] = React.useState({
-    author: `ilyas Bozdemir,bozdemir.ib70@gmail.com`,
-    title: `Anasayfa | domainname.com`,
-    url: currentUrl,
-    image: "",
-    imageAlt: "site-logo-png",
+
+
+  const initialSiteState = {
+    author: ``,
+    pageTitle: ``,
+    url: ``,
+    image: ``,
+    imageAlt: ``,
     description: ``,
     name: ``,
-    keywords: "",
-  });
+    keywords: `xx`,
+    publisher: ``,
+  };
+
+  const [site, setSite] = React.useState(initialSiteState)
+  React.useEffect(() => {
+    setSite({
+      author: `ilyas Bozdemir,bozdemir.ib70@gmail.com`,
+      pageTitle: `Anasayfa | domainname.com`,
+      url: `fullUrl`,
+      baseUrl: `baseUrl`,
+      image: ``,
+      imageAlt: `site-logo-png`,
+      description: ``,
+      name: ``,
+      keywords: ``,
+      publisher: ``,
+    })
+
+
+  }, [])
+
+
 
   return (
     <>
-      <>
-        <MetaHead
-          pageTitle={site.title}
-          description={site.description}
-          keywords={site.keywords}
-        />
-      </>
+
+      <Head>
+        <link rel="canonical" href={site.url} />
+        <base href={site.baseUrl} />
+        <meta itemprop="name" content={site.title} />
+        <meta itemprop="description" content={site.description} />
+        <meta name="description" content={site.description} />
+        <meta name="robots" content="index, follow" />
+        <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="language" content="Turkish" />
+        <meta name="revisit-after" content="1 day" />
+        <meta name="keywords" content={site.keywords} />
+        <meta name="author" content={site.author || `ilyas Bozdemir,bozdemir.ib70@gmail.com`} />
+        <meta name="publisher" content={site.publisher || `ilyas Bozdemir`} />
+
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:title" content={site.title} />
+        <meta name="twitter:description" content={site.description} />
+        <meta name="twitter:site" content="@Ilyasbzdmr70" />
+
+        <meta name="og:title" content={site.title} />
+        <meta name="og:description" content={site.description} />
+        <meta name="og:type" content="website" />
+      </Head>
       <>
         <Stack as="main" w={"full"} p={2} spacing={3}>
-
-          <Box zIndex={10} id='story' as={'section'} h={50}>
+          <Box id="story" as={"section"} h={50}>
             <Story />
           </Box>
 
-          <Box zIndex={10} id='SimpleSlider' as={'section'}>
+          <Box id="SimpleSlider" as={"section"}>
             <SimpleSlider />
           </Box>
-          <Box zIndex={10} id='image' as={'section'}>
-            <Image
-              src={"images/img.png"}
-              width={1920}
-              height={150}
-              draggable={false}
-              unoptimized
-            />
+
+          <Box id="image" as={"section"}>
+
+            {
+              /*
+                <Image
+                          src={"images/img.png"}
+                          width={1920}
+                          height={150}
+                          draggable={false}
+                          priority={true}
+                          unoptimized
+                        />
+               */
+            }
+
+
           </Box>
 
+          <Box zIndex={10} id="BestSellingProducts" as={"section"}>
+            <BestSellingProducts />
+          </Box>
 
-          <Box zIndex={10} id='HighlightsProducts' as={'section'}>
+          <Box zIndex={10} id="Showcase" as={"section"}>
+            <Showcase />
+          </Box>
+
+          <Box zIndex={10} id="HighlightsProducts" as={"section"}>
             <HighlightsProducts />
           </Box>
 
-          <Box zIndex={10} id='BestSellingProducts' as={'section'}>
-            <BestSellingProducts />
-          </Box>
-          <Box zIndex={10} id='Showcase' as={'section'}>
-            <Showcase />
-          </Box>
+
         </Stack>
       </>
     </>

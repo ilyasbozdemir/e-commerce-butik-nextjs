@@ -2,7 +2,7 @@ import React from 'react'
 
 function BestSellingProducts() {
   return (
-    <div>BestSellingProducts  Component</div>
+    <div>[BestSellingProducts  Component]</div>
   )
 }
 

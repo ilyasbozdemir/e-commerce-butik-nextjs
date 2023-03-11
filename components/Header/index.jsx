@@ -1,9 +1,7 @@
-import React from "react";
 import {
   Box,
   Divider,
   Flex,
-  Stack,
 } from "@chakra-ui/react";
 
 
@@ -17,7 +15,6 @@ function Header() {
     <>
       <Box
         as="header"
-        display={"flex"}
         top="0"
         zIndex="250"
         boxShadow={`rgba(0, 0, 0, 0.07) 0px 1px 1px,
@@ -44,9 +41,9 @@ function Header() {
         </Flex>
       </Box>
 
-      <Stack display={{ base: "initial", md: "none" }} w={"100%"}>
-        <>bottom nav</>
-      </Stack>
+      <Flex display={{ base: "initial", md: "none" }} w={"100%"}>
+        bottom nav
+      </Flex>
     </>
   );
 }

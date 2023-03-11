@@ -1,8 +1,13 @@
+import { Box } from '@chakra-ui/react'
 import React from 'react'
 
-function Showcase () {
+function Showcase() {
   return (
-    <div>Showcases  Component</div>
+    <>
+      <Box>
+
+      </Box>
+    </>
   )
 }
 

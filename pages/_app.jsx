@@ -34,8 +34,18 @@ function MyApp({ Component, pageProps, statusCode }) {
   Router.events.on("routeChangeComplete", progress.finish);
   Router.events.on("routeChangeError", progress.finish);
 
+  React.useEffect(()=>{
+    if (typeof window !== "undefined") {
+      import("@chakra-ui/react").then(() => {
+        // Çoklu React render etme hatası önleme için:
+        // eslint-disable-next-line no-underscore-dangle
+        // window._REACT_DEVTOOLS_GLOBAL_HOOK_.inject = function () {};
+      });
+    }
+  },[])
+
   return (
-    <ChakraProvider theme={theme}>
+    <ChakraProvider resetCSS  theme={theme}>
       <MainContext.Provider value={data}>
         <Layout>
           <Component {...pageProps} />
