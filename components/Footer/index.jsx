@@ -3,7 +3,7 @@ import Logo from "../../components/Logo";
 import { useRouter } from "next/router";
 import Link from "next/link";
 import { useToast } from "@chakra-ui/react";
-import { Tooltip } from '@chakra-ui/react'
+import { Tooltip } from "@chakra-ui/react";
 import {
   Button,
   ButtonGroup,
@@ -15,8 +15,14 @@ import {
   Text,
 } from "@chakra-ui/react";
 
-import { FaGithub, FaLinkedin, FaPinterestP, FaWhatsapp, FaInstagram, FaFacebookF } from "react-icons/fa";
-
+import {
+  FaGithub,
+  FaLinkedin,
+  FaPinterestP,
+  FaWhatsapp,
+  FaInstagram,
+  FaFacebookF,
+} from "react-icons/fa";
 
 import iyzicoLogo from "../../assests/iyzico_ile_ode_white.png";
 import appStoreBadge from "../../assests/app-store-badge.svg";
@@ -47,7 +53,7 @@ function Footer() {
     setEmail("");
   }
 
-  React.useEffect(() => { }, []);
+  React.useEffect(() => {}, []);
   const toast = useToast();
   return (
     <>
@@ -59,6 +65,7 @@ function Footer() {
         _light={{ bg: "blackAlpha.900" }}
         _dark={{ bg: "blackAlpha.900" }}
         marginTop={10}
+        mb={{ base: 55, md: 0 }}
       >
         <Divider marginBottom={3} />
         <Stack
@@ -79,22 +86,43 @@ function Footer() {
             <Text color="muted.200">En Trend Kadın Giyim</Text>
 
             <ButtonGroup variant="ghost">
-              <Tooltip label="Facebook" aria-label='Facebook' hasArrow placement='top' bg='purple.400'>
+              <Tooltip
+                label="Facebook"
+                aria-label="Facebook"
+                hasArrow
+                placement="top"
+                bg="purple.400"
+              >
                 <IconButton
                   aria-label="Facebook"
                   icon={<FaFacebookF fontSize="1.25rem" />}
                   _hover={{ bg: "blue.500", color: " white" }}
                 />
               </Tooltip>
-              <Tooltip label="Instagram" aria-label='Instagram' hasArrow placement='top' bg='purple.400'>
+              <Tooltip
+                label="Instagram"
+                aria-label="Instagram"
+                hasArrow
+                placement="top"
+                bg="purple.400"
+              >
                 <IconButton
                   as="button"
                   aria-label="Instagram"
                   icon={<FaInstagram fontSize="1.25rem" />}
-                  _hover={{ bgGradient: "linear(to-r, #833AB4, #FD1D1D, #F56040)", color: " white" }}
+                  _hover={{
+                    bgGradient: "linear(to-r, #833AB4, #FD1D1D, #F56040)",
+                    color: " white",
+                  }}
                 />
               </Tooltip>
-              <Tooltip label="Whatsapp" aria-label='Whatsapp' hasArrow placement='top' bg='purple.400' >
+              <Tooltip
+                label="Whatsapp"
+                aria-label="Whatsapp"
+                hasArrow
+                placement="top"
+                bg="purple.400"
+              >
                 <IconButton
                   as="button"
                   aria-label="Whatsapp"
@@ -103,7 +131,13 @@ function Footer() {
                 />
               </Tooltip>
 
-              <Tooltip label="Pinterest" aria-label='Pinterest' hasArrow placement='top' bg='purple.400' >
+              <Tooltip
+                label="Pinterest"
+                aria-label="Pinterest"
+                hasArrow
+                placement="top"
+                bg="purple.400"
+              >
                 <IconButton
                   as="button"
                   aria-label="Pinterest"
@@ -111,11 +145,15 @@ function Footer() {
                   _hover={{ bg: "#BD081C", color: " white" }}
                 />
               </Tooltip>
-
             </ButtonGroup>
             <Text fontSize="13px">Güvenli Alışveriş</Text>
 
-            <Link href='https://www.iyzico.com/' target={'_blank'} rel="noopener noreferrer" passHref>
+            <Link
+              href="https://www.iyzico.com/"
+              target={"_blank"}
+              rel="noopener noreferrer"
+              passHref
+            >
               <Image
                 src={iyzicoLogo}
                 alt="iyzico ile öde logo"
@@ -124,8 +162,6 @@ function Footer() {
                 draggable={false}
               />
             </Link>
-
-
           </Stack>
 
           <Stack
@@ -145,7 +181,6 @@ function Footer() {
                   Hesabım
                 </Text>
                 <Stack spacing="2" shouldWrapChildren>
-
                   <Link href="/hesabim">
                     <Button variant="link" color="white" fontSize={[10, 13]}>
                       Hesabım
@@ -259,14 +294,15 @@ function Footer() {
           <Text textAlign="center" fontSize="sm" color="subtle">
             Bu websitesi
             <Link
-              target={'_blank'}
+              target={"_blank"}
               rel="noopener noreferrer"
-              href={'https://github.com/ilyasbozdemir'}
-              passHref>
-              <>  İlyas Bozdemir</>
-            </Link> tarafından geliştirilmiştir.
+              href={"https://github.com/ilyasbozdemir"}
+              passHref
+            >
+              <> İlyas Bozdemir</>
+            </Link>{" "}
+            tarafından geliştirilmiştir.
           </Text>
-
         </Stack>
       </Container>
     </>

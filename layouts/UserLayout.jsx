@@ -6,13 +6,7 @@ import Banner from "../components/Banner";
 import Sidebar from "../components/Sidebar";
 import Header from "../components/Header";
 
-import {
-  Box,
-  Drawer,
-  DrawerContent,
-  useDisclosure
-} from "@chakra-ui/react";
-
+import { Box, Drawer, DrawerContent, useDisclosure } from "@chakra-ui/react";
 
 function UserLayout({ children }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -26,7 +20,7 @@ function UserLayout({ children }) {
           onClose={onClose}
           returnFocusOnClose={false}
           onOverlayClick={onClose}
-          size="xs"
+          size="full"
         >
           <DrawerContent>
             <Sidebar onClose={onClose} />
@@ -34,13 +28,12 @@ function UserLayout({ children }) {
         </Drawer>
 
         <>
-
           <Banner />
           <Header onOpen={onOpen} />
-          <Box p={2}>
+          <Box p={3}  mt={{ base: 5, md: 0 }}>
             {children}
+            <ScrollToTop />
           </Box>
-          <ScrollToTop />
           <Footer />
         </>
       </Box>

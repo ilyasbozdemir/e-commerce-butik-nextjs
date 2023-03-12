@@ -8,8 +8,11 @@ import {
 import HeaderTop from "./HeaderTop";
 import HeaderBody from "./HeaderBody";
 import HeaderBottom from "./HeaderBottom";
+import HeaderMobile from "./HeaderMobile";
 
-function Header() {
+import BottomNavigation from "../BottomNavigation";
+
+function Header({onOpen}) {
 
   return (
     <>
@@ -34,15 +37,15 @@ function Header() {
 
           <Divider />
           <HeaderBottom />
-          
+
         </Flex>
         <Flex display={{ base: "initial", md: "none" }} w={"100%"}>
-          ddsf
+          <HeaderMobile onOpen={onOpen}/>
         </Flex>
       </Box>
 
       <Flex display={{ base: "initial", md: "none" }} w={"100%"}>
-        bottom nav
+        <BottomNavigation onOpen={onOpen}/>
       </Flex>
     </>
   );
