@@ -6,7 +6,6 @@ import Desktop from "./Desktop";
 
 function Showcase() {
   const [size, setSize] = useState("mobile");
-
   useEffect(() => {
 
     const handleResize = () => {
@@ -20,7 +19,7 @@ function Showcase() {
       }
     };
 
-    if (typeof window !== 'undefined') {
+    if (typeof window !== "undefined") {
       handleResize();
       window.addEventListener("resize", handleResize);
       return () => {
@@ -28,7 +27,6 @@ function Showcase() {
       };
     }
   }, []);
-  
 
   return (
     <Flex justifyContent={"center"}>
