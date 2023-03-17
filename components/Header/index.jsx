@@ -4,15 +4,17 @@ import {
   Flex,
 } from "@chakra-ui/react";
 
-
 import HeaderTop from "./HeaderTop";
 import HeaderBody from "./HeaderBody";
 import HeaderBottom from "./HeaderBottom";
 import HeaderMobile from "./HeaderMobile";
+import Banner from "../Banner";
 
 import BottomNavigation from "../BottomNavigation";
+import { useEffect, useState } from "react";
 
-function Header({onOpen}) {
+function Header({ onOpen }) {
+
 
   return (
     <>
@@ -27,25 +29,25 @@ function Header({onOpen}) {
         _light={{ bg: "white" }}
         _dark={{ bg: "blackAlpha.50" }}
         p={2}
+    
       >
-        <Flex display={{ base: "none", md: "initial" }} w={"100%"}>
+        <Flex direction={'row'} display={{ base: "none", md: "initial" }} w={"100%"}>
 
+          <Banner />
           <HeaderTop />
-
           <Divider />
           <HeaderBody />
-
           <Divider />
           <HeaderBottom />
 
         </Flex>
         <Flex display={{ base: "initial", md: "none" }} w={"100%"}>
-          <HeaderMobile onOpen={onOpen}/>
+          <HeaderMobile onOpen={onOpen} />
         </Flex>
       </Box>
 
       <Flex display={{ base: "initial", md: "none" }} w={"100%"}>
-        <BottomNavigation onOpen={onOpen}/>
+        <BottomNavigation />
       </Flex>
     </>
   );

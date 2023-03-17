@@ -6,6 +6,7 @@ import Navbar from "../Navbar";
 function HeaderBottom() {
   return (
     <Flex
+      as={"nav"}
       justifyContent={"center"}
       my={1}
       bg={"#865DFF"}

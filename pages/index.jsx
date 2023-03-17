@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Stack } from "@chakra-ui/react";
+import { Box, Flex, Stack } from "@chakra-ui/react";
 import MetaHead from "../components/MetaHead";
 import { useRouter } from "next/router";
 import Image from "next/Image";
@@ -11,8 +11,6 @@ import Showcase from "../components/Showcase";
 import Head from "next/head";
 
 export default function HomePage() {
-
-
   const initialSiteState = {
     author: ``,
     pageTitle: ``,
@@ -25,7 +23,7 @@ export default function HomePage() {
     publisher: ``,
   };
 
-  const [site, setSite] = React.useState(initialSiteState)
+  const [site, setSite] = React.useState(initialSiteState);
   React.useEffect(() => {
     setSite({
       author: `ilyas Bozdemir,bozdemir.ib70@gmail.com`,
@@ -38,16 +36,11 @@ export default function HomePage() {
       name: ``,
       keywords: ``,
       publisher: ``,
-    })
-
-
-  }, [])
-
-
+    });
+  }, []);
 
   return (
     <>
-
       <Head>
         <link rel="canonical" href={site.url} />
         <base href={site.baseUrl} />
@@ -60,7 +53,10 @@ export default function HomePage() {
         <meta name="language" content="Turkish" />
         <meta name="revisit-after" content="1 day" />
         <meta name="keywords" content={site.keywords} />
-        <meta name="author" content={site.author || `ilyas Bozdemir,bozdemir.ib70@gmail.com`} />
+        <meta
+          name="author"
+          content={site.author || `ilyas Bozdemir,bozdemir.ib70@gmail.com`}
+        />
         <meta name="publisher" content={site.publisher || `ilyas Bozdemir`} />
 
         <meta name="twitter:card" content="summary" />
@@ -74,7 +70,8 @@ export default function HomePage() {
       </Head>
       <>
         <Stack as="main" w={"full"} p={2} spacing={2}>
-          <Box id="story" as={"section"} >
+          
+          <Box id="story" as={"section"}>
             <Story />
           </Box>
 
@@ -94,19 +91,18 @@ export default function HomePage() {
             <Showcase />
           </Box>
 
-
-          <Box id="image" as={"section"}>
-
-            <Image
-              src={"images/img.png"}
-              width={1920}
-              height={150}
-              draggable={false}
-              priority={true}
-              unoptimized
-            />
-
-          </Box>
+          <Flex
+            justifyContent={"space-between"}
+            zIndex={10}
+            id="payment-info-box"
+            as={"section"}
+            display={'none'}
+          >
+            <>Güvenli Ödeme | </>
+            <>7/24 Destek | </>
+            <>Hızlı ve Güvenli Kargo | </>
+            <>Güvenli Alışveriş</>
+          </Flex>
 
         </Stack>
       </>

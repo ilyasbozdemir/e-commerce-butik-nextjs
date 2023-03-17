@@ -29,6 +29,8 @@ import appStoreBadge from "../../assests/app-store-badge.svg";
 import googlePlayBadge from "../../assests/google-play-badge.svg";
 
 import Image from "next/image";
+import SocialMediaButtons from "../SocialMediaButtons";
+import ToggleDarkMode from "../ToggleDarkMode";
 
 function Footer() {
   const router = useRouter();
@@ -65,7 +67,7 @@ function Footer() {
         _light={{ bg: "blackAlpha.900" }}
         _dark={{ bg: "blackAlpha.900" }}
         marginTop={10}
-        mb={{ base: 55, md: 0 }}
+        mb={{ base: "82px", md: 0 }}
       >
         <Divider marginBottom={3} />
         <Stack
@@ -85,67 +87,10 @@ function Footer() {
 
             <Text color="muted.200">En Trend Kadın Giyim</Text>
 
-            <ButtonGroup variant="ghost">
-              <Tooltip
-                label="Facebook"
-                aria-label="Facebook"
-                hasArrow
-                placement="top"
-                bg="purple.400"
-              >
-                <IconButton
-                  aria-label="Facebook"
-                  icon={<FaFacebookF fontSize="1.25rem" />}
-                  _hover={{ bg: "blue.500", color: " white" }}
-                />
-              </Tooltip>
-              <Tooltip
-                label="Instagram"
-                aria-label="Instagram"
-                hasArrow
-                placement="top"
-                bg="purple.400"
-              >
-                <IconButton
-                  as="button"
-                  aria-label="Instagram"
-                  icon={<FaInstagram fontSize="1.25rem" />}
-                  _hover={{
-                    bgGradient: "linear(to-r, #833AB4, #FD1D1D, #F56040)",
-                    color: " white",
-                  }}
-                />
-              </Tooltip>
-              <Tooltip
-                label="Whatsapp"
-                aria-label="Whatsapp"
-                hasArrow
-                placement="top"
-                bg="purple.400"
-              >
-                <IconButton
-                  as="button"
-                  aria-label="Whatsapp"
-                  icon={<FaWhatsapp fontSize="1.25rem" />}
-                  _hover={{ bg: "#25D366", color: " white" }}
-                />
-              </Tooltip>
+            <ToggleDarkMode />
 
-              <Tooltip
-                label="Pinterest"
-                aria-label="Pinterest"
-                hasArrow
-                placement="top"
-                bg="purple.400"
-              >
-                <IconButton
-                  as="button"
-                  aria-label="Pinterest"
-                  icon={<FaPinterestP fontSize="1.25rem" />}
-                  _hover={{ bg: "#BD081C", color: " white" }}
-                />
-              </Tooltip>
-            </ButtonGroup>
+            <SocialMediaButtons />
+            
             <Text fontSize="13px">Güvenli Alışveriş</Text>
 
             <Link
@@ -277,7 +222,7 @@ function Footer() {
         >
           <Text fontSize="sm" color="subtle">
             &copy; {new Date().getFullYear() + " "}
-            Eflatun Butik. Tüm Hakları Saklıdır..
+            Eflatun Butik. Tüm Hakları Saklıdır.
           </Text>
         </Stack>
 

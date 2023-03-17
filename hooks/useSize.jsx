@@ -1,14 +1,9 @@
-import { Flex } from "@chakra-ui/react";
-import { useEffect, useState } from "react";
-import Mobile from "./Mobile";
-import Tablet from "./Tablet";
-import Desktop from "./Desktop";
+import React, { useEffect, useState } from "react";
 
-function Showcase() {
+export default function useSize() {
   const [size, setSize] = useState("mobile");
 
   useEffect(() => {
-
     const handleResize = () => {
       const width = window.innerWidth;
       if (width < 768) {
@@ -28,19 +23,6 @@ function Showcase() {
       };
     }
   }, []);
-  
 
-  return (
-    <Flex justifyContent={"center"}>
-      {size == "mobile" ? (
-        <Mobile size={size} />
-      ) : size == "tablet" ? (
-        <Tablet size={size} />
-      ) : (
-        <Desktop size={size} />
-      )}
-    </Flex>
-  );
+  return size;
 }
-
-export default Showcase;

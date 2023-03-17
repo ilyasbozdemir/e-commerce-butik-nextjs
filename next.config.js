@@ -12,8 +12,10 @@ module.exports = withBundleAnalyzer({
     unoptimized: true
   },
   productionBrowserSourceMaps: true,
+  
   // publicRuntimeConfig: {},
   //serverRuntimeConfig: {},
+  /*
   async headers() {
     return [
       {
@@ -56,6 +58,8 @@ module.exports = withBundleAnalyzer({
       },
     ]
   },
+  */
+
   webpack(config, { webpack }) {
     const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer')
     const isServer = typeof window === 'undefined'

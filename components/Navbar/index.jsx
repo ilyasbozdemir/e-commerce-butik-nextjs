@@ -1,13 +1,11 @@
 import React from "react";
 import Link from "next/link";
-import Image from "next/image";
 import {
   useDisclosure,
   Menu,
   MenuItem,
   MenuButton,
   MenuList,
-  Portal,
   useColorModeValue,
   Text,
   HStack,
@@ -45,11 +43,9 @@ export default function Navbar({ link }) {
         </Link>
 
 
-
-
-        {link.childrens.length !== 0 ? (
+        {link.childrens?.length !== 0 ? (
           <MenuList onMouseEnter={onOpen} onMouseLeave={onClose}>
-            {link.childrens.map((link, i) => (
+            {link.childrens?.map((link, i) => (
               <HStack>
                 <Link href={link.href} key={i} legacyBehavior passHref>
 

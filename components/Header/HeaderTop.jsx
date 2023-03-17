@@ -3,12 +3,10 @@ import { Flex, HStack, Stack, Icon, Text } from '@chakra-ui/react'
 import Link from 'next/link'
 
 
-import { RiWechat2Line } from "react-icons/ri";
-
 function HeaderTop() {
   return (
     <>
-      <Flex justifyContent={"space-between"} my={2}>
+      <Flex justifyContent={"space-between"} my={2} fontSize={{base:'sm',md:'md'}}>
         <HStack>
           <Stack fontWeight={"semibold"} fontSize={12}>
             <Link href="/iletisim" passHref>
@@ -17,15 +15,6 @@ function HeaderTop() {
               </HStack>
             </Link>
           </Stack>
-
-          <Stack fontWeight={"semibold"} fontSize={12}>
-            <Link href="/hakkimizda" passHref>
-              <HStack spacing={1} direction={"row"}>
-                <Text>Hakkımızda</Text>
-              </HStack>
-            </Link>
-          </Stack>
-
           <Stack fontWeight={"semibold"} fontSize={12}>
             <Link href="/yardim" passHref>
               <HStack  spacing={1} direction={"row"}>

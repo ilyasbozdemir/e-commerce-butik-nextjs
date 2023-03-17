@@ -5,11 +5,9 @@ import AdminLayout from "../layouts/AdminLayout";
 import UserLayout from "../layouts/UserLayout";
 import theme from "../src/theme";
 import React from "react";
-import Router from "next/router";
 import { useRouter } from "next/router";
-import ProgressBar from "@badrap/bar-of-progress";
-
-function MyApp({ Component, pageProps, statusCode }) {
+import "../styles/globals.css";
+function MyApp({ Component, pageProps }) {
   const data = {};
   let Layout;
   const router = useRouter();
@@ -18,34 +16,13 @@ function MyApp({ Component, pageProps, statusCode }) {
     Layout = UserLayout;
   } else if (router.pathname.startsWith("/admin")) {
     Layout = AdminLayout;
-  }
-  else {
+  } else {
     Layout = UserLayout;
   }
 
-  const progress = new ProgressBar({
-    size: 2,
-    color: "#bd1a30",
-    className: "bar-of-progress",
-    delay: 100,
-  });
-
-  Router.events.on("routeChangeStart", progress.start);
-  Router.events.on("routeChangeComplete", progress.finish);
-  Router.events.on("routeChangeError", progress.finish);
-
-  React.useEffect(()=>{
-    if (typeof window !== "undefined") {
-      import("@chakra-ui/react").then(() => {
-        // Çoklu React render etme hatası önleme için:
-        // eslint-disable-next-line no-underscore-dangle
-        // window._REACT_DEVTOOLS_GLOBAL_HOOK_.inject = function () {};
-      });
-    }
-  },[])
 
   return (
-    <ChakraProvider resetCSS  theme={theme}>
+    <ChakraProvider resetCSS theme={theme}>
       <MainContext.Provider value={data}>
         <Layout>
           <Component {...pageProps} />
@@ -54,6 +31,5 @@ function MyApp({ Component, pageProps, statusCode }) {
     </ChakraProvider>
   );
 }
-
 
 export default MyApp;

@@ -6,19 +6,27 @@ import {
   InputRightElement,
   HStack,
 } from "@chakra-ui/react";
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import { BiSearch } from "react-icons/bi";
 import { MdClose } from "react-icons/md";
 
-function SearchBox() {
+function SearchBox({ fromC = "current" }) {
   const inputRef = useRef(null);
   const [data, setData] = React.useState("");
   const handleClick = () => {
     setData("");
   };
   const searchClick = () => {
-    alert('search')
+    alert("search");
   };
+
+  useEffect(() => {
+    if (fromC === "mobile-search-button") {
+    
+    }
+    inputRef.current.focus();
+  }, []);
+
   return (
     <HStack p={1}>
       <InputGroup size="md">
@@ -46,7 +54,14 @@ function SearchBox() {
           <></>
         )}
       </InputGroup>
-      <Button bg={"#ECF2FF"} color={"#7b61ff"} onClick={searchClick}>
+      <Button
+        borderRadius={"50%"}
+        width="45px"
+        height="45px"
+        bg={"#ECF2FF"}
+        color={"#7b61ff"}
+        onClick={searchClick}
+      >
         <Icon as={BiSearch} />
       </Button>
     </HStack>
