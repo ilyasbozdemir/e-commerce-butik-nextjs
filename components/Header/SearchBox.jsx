@@ -22,9 +22,9 @@ function SearchBox({ fromC = "current" }) {
 
   useEffect(() => {
     if (fromC === "mobile-search-button") {
-    
+      inputRef.current.focus();
     }
-    inputRef.current.focus();
+  
   }, []);
 
   return (

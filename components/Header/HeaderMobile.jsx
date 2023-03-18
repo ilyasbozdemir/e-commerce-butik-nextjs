@@ -33,7 +33,7 @@ function HeaderMobile({ onOpen }) {
       >
         <Flex direction={'column'}>
           <Banner />
-          <Flex justifyContent={"space-between"} h={75}>
+          <Flex justifyContent={"space-between"} >
             <Stack
               onClick={() => openDrawer("menuButton")}
               alignItems={"center"}

@@ -1,10 +1,11 @@
 import { Box } from "@chakra-ui/react";
 import Image from "next/Image";
 import React, { useEffect } from "react";
-import { showcaseImages } from "../../mocks/showcaseImages";
+import { sliderImages } from "../../mocks/sliderImages";
 
-function ShowcaseImage({ image, size }) {
-  const imageObject = showcaseImages.find((img) => img.id === image);
+function SimpleSliderImage({ image, size }) {
+  
+  const imageObject = sliderImages.find((img) => img.id === image);
 
   if (!imageObject && imageObject !== undefined) {
     return null;
@@ -12,10 +13,7 @@ function ShowcaseImage({ image, size }) {
   const { src, width, height } = imageObject[size];
 
   return (
-    <Box
-      w={"100%"}
-      maxWidth="100%"
-    >
+    <Box w={"100%"} maxWidth="100%">
       <Image
         src={src}
         width={width}
@@ -24,11 +22,10 @@ function ShowcaseImage({ image, size }) {
         loading={"lazy"}
         style={{
           borderRadius: "15px",
-          boxShadow: 'rgba(0, 0, 0, 0.15) 0px 5px 15px 0px'
         }}
       />
     </Box>
   );
 }
 
-export default ShowcaseImage;
+export default SimpleSliderImage;
