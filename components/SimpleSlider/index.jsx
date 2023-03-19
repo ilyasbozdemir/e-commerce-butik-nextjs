@@ -1,6 +1,5 @@
 import React from "react";
 import dynamic from 'next/dynamic';
-
 import { Box} from "@chakra-ui/react";
 import ImageItem from "./ImageItem";
 import { sliderImages } from '../../mocks/sliderImages'

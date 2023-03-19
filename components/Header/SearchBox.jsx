@@ -37,6 +37,7 @@ function SearchBox({ fromC = "current" }) {
           placeholder="ürün, kategorileri ara."
           value={data}
           onChange={(e) => setData(e.target.value)}
+          borderRadius={'20px'}
         />
         {data !== "" ? (
           <>

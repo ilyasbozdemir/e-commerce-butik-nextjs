@@ -2,14 +2,13 @@ import React, { useState } from "react";
 
 import Footer from "../components/Footer";
 import ScrollToTop from "../components/ScrollToTop";
-import Banner from "../components/Banner";
+import PopupWithDiscount from "../components/PopupWithDiscount";
 import Sidebar from "../components/Sidebar";
 import Header from "../components/Header";
 
 import { Box, Drawer,  DrawerOverlay, useDisclosure } from "@chakra-ui/react";
 
 function UserLayout({ children }) {
-  const [isMenuButton, setMenuButton] = useState(false);
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
@@ -34,12 +33,14 @@ function UserLayout({ children }) {
         </Drawer>
 
         <>
+       
           <Header onOpen={onOpen}  />
           <Box p={3} mt={{ base: 10, md: 0.5 }}>
             {children}
             <ScrollToTop />
           </Box>
           <Footer />
+           <PopupWithDiscount/>
         </>
       </Box>
     </>
