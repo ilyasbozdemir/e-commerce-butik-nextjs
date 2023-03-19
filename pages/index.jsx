@@ -9,6 +9,7 @@ import SimpleSlider from "../components/SimpleSlider";
 import Story from "../components/Story";
 import Showcase from "../components/Showcase";
 import Head from "next/head";
+import PaymentInfoBox from "../components/PaymentInfoBox ";
 
 export default function HomePage() {
   const initialSiteState = {
@@ -69,8 +70,7 @@ export default function HomePage() {
         <meta name="og:type" content="website" />
       </Head>
       <>
-        <Stack as="main" w={"full"} p={2} spacing={2}>
-          
+        <Stack zIndex={10} as="main" w={"full"} p={2} spacing={2}>
           <Box id="story" as={"section"}>
             <Story />
           </Box>
@@ -79,31 +79,22 @@ export default function HomePage() {
             <SimpleSlider />
           </Box>
 
-          <Box zIndex={10} id="BestSellingProducts" as={"section"}>
+          <Box id="BestSellingProducts" as={"section"}>
             <BestSellingProducts />
           </Box>
 
-          <Box zIndex={10} id="HighlightsProducts" as={"section"}>
+          <Box id="HighlightsProducts" as={"section"}>
             <HighlightsProducts />
           </Box>
 
-          <Box zIndex={10} id="Showcase" as={"section"}>
+          <Box id="Showcase" as={"section"}>
             <Showcase />
           </Box>
 
-          <Flex
-            justifyContent={"space-between"}
-            zIndex={10}
-            id="payment-info-box"
-            as={"section"}
-            display={'none'}
-          >
-            <>Güvenli Ödeme | </>
-            <>7/24 Destek | </>
-            <>Hızlı ve Güvenli Kargo | </>
-            <>Güvenli Alışveriş</>
-          </Flex>
-
+          <Box id="PaymentInfoBox" as={"section"}>
+            <PaymentInfoBox />
+          </Box>
+          
         </Stack>
       </>
     </>
