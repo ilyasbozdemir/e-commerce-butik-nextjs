@@ -1,37 +1,45 @@
-import { Flex, Stack, Text, Box, Icon } from "@chakra-ui/react";
-import Image from 'next/image'
-import React from 'react'
+import { Stack, Text, Box } from "@chakra-ui/react";
+import Image from "next/image";
+import React from "react";
 
 function ImageItem({ src, to, name, ...rest }) {
-
-    return (
-        <>
-            <Stack
-                display={"flex !important"}
-                direction={"column"}
-                alignItems={"center"}
-                overflow={"auto"}
-                {...rest}
-            >
-                <Image
-                    css={{
-                        borderRadius: "50px",
-                        objectFit: 'cover',
-                        boxSize: '50px',
-                        borderRadius: '100%'
-                    }}
-                    width={50}
-                    height={50}
-                    src={src}
-                    alt={name}
-                    draggable={false}
-                />
-                <Text as={"span"} size={"sm"}>
-                    {name}
-                </Text>
-            </Stack>
-        </>
-    )
+  return (
+    <>
+      <Stack
+        display={"flex !important"}
+        direction={"column"}
+        alignItems={"center"}
+        overflow={"auto"}
+        {...rest}
+      >
+        <Box
+          w={"60px"}
+          h={"60px"}
+          borderRadius="full"
+          overflow="hidden"
+          border="3px solid"
+          borderColor="gray.500"
+          _hover={{
+            border: "2px solid",
+            borderColor: "gray.500",
+            transform: "scale(1.05)",
+            borderRadius: "40px",
+          }}
+        >
+          <Image
+            width={60}
+            height={60}
+            src={src}
+            alt={name}
+            draggable={false}
+          />
+        </Box>
+        <Text as={"span"} size={"sm"}>
+          {name}
+        </Text>
+      </Stack>
+    </>
+  );
 }
 
-export default ImageItem
+export default ImageItem;

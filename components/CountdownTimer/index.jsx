@@ -24,7 +24,7 @@ function CountdownTimer() {
   };
 
   useEffect(() => {
-    const countdownDate = new Date("2023-03-20T23:59:59").getTime();
+    const countdownDate = new Date("2023-03-21T23:59:59").getTime();
     const interval = setInterval(() => {
       const now = new Date().getTime();
       const distance = countdownDate - now;

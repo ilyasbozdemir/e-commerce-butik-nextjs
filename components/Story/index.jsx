@@ -1,27 +1,20 @@
 import React from "react";
-import dynamic from 'next/dynamic';
+import dynamic from "next/dynamic";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { Box, Flex } from "@chakra-ui/react";
 import ImageItem from "./ImageItem";
-import { images } from '../../mocks/storyImages'
+import { images } from "../../mocks/storyImages";
 
-const Slider = dynamic(
-  () => import('react-slick'),
-  {
-    ssr: false,
-    loading: () => {
-      <>
-        loading
-      </>
-    }
-  }
-);
-
+const Slider = dynamic(() => import("react-slick"), {
+  ssr: false,
+  loading: () => {
+    <>loading</>;
+  },
+});
 
 function Story() {
-
   var settings = {
     responsive: [
       {
@@ -60,7 +53,6 @@ function Story() {
     ],
   };
 
-
   return (
     <>
       <Flex justifyContent={"center"}>
@@ -68,7 +60,6 @@ function Story() {
           <Slider
             slidesToShow={6}
             lazyLoad={true}
-            initialSlide={2}
             infinite={true}
             arrows={true}
             {...settings}
@@ -83,9 +74,10 @@ function Story() {
           </Slider>
         </Box>
       </Flex>
+
+      <></>
     </>
   );
 }
 
 export default Story;
-

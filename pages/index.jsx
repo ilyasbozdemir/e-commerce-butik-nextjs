@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Center, Flex, Stack, Text } from "@chakra-ui/react";
+import { Box, Center, Divider, Flex, Stack, Text } from "@chakra-ui/react";
 import MetaHead from "../components/MetaHead";
 import { useRouter } from "next/router";
 import Image from "next/Image";
@@ -55,7 +55,6 @@ export default function HomePage() {
         <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
         <meta name="language" content="Turkish" />
         <meta name="revisit-after" content="1 day" />
-        <meta name="keywords" content={site.keywords} />
         <meta
           name="author"
           content={site.author || `ilyas Bozdemir,bozdemir.ib70@gmail.com`}
@@ -90,13 +89,16 @@ export default function HomePage() {
           >
             <Flex direction={"column"} justifyContent={"center"} gap={3} py={2}>
               <Center>
-                <Text as='h2' fontSize={"semibold"}>SANA ÖZEL KATEGORİLER</Text>
+                <Text as="h2" fontSize={"semibold"}>
+                  SANA ÖZEL KATEGORİLER
+                </Text>
               </Center>
               <Story />
             </Flex>
           </Box>
+          <Divider />
 
-          <Box id="SimpleSlider" as={"section"}>
+          <Box id="SimpleSlider" as={"section"} my={40}>
             <SimpleSlider />
           </Box>
 
@@ -108,13 +110,12 @@ export default function HomePage() {
             <HighlightsProducts />
           </Box>
 
-          <Box
-            id="Showcase"
-            as={"section"}
-          >
+          <Box id="Showcase" as={"section"}>
             <Flex direction={"column"} justifyContent={"center"} gap={3} py={2}>
               <Center>
-                <Text as='h2' fontSize={"semibold"}>KATEGORİLER</Text>
+                <Text as="h2" fontSize={"semibold"}>
+                  KATEGORİLER
+                </Text>
               </Center>
               <Showcase />
             </Flex>

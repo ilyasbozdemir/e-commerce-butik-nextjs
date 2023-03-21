@@ -1,11 +1,11 @@
 export const sliderImages = [
   {
-    id: "top-full-picture",
-    alt: "top full picture",
+    id: "slider-1",
+    alt: "slider-1",
     desktop: {
       src:
         process.env.NODE_ENV !== "development"
-          ? "/mocks/image-desktop-1.jpg"
+          ? "</mocks/image-desktop-1.jpg>"
           : "https://picsum.photos/1472/360",
       width: 1472,
       height: 360,
@@ -13,7 +13,7 @@ export const sliderImages = [
     tablet: {
       src:
         process.env.NODE_ENV !== "development"
-          ? "/mocks/image-tablet-1.jpg"
+          ? "</mocks/image-tablet-1.jpg>"
           : "https://picsum.photos/800/250",
       width: 800,
       height: 250,
@@ -21,92 +21,92 @@ export const sliderImages = [
     mobile: {
       src:
         process.env.NODE_ENV !== "development"
-          ? "/mocks/image-mobile-1.jpg"
+          ? "</mocks/image-mobile-1.jpg>"
           : "https://picsum.photos/540/200",
       width: 540,
       height: 200,
     },
   },
   {
-    id: "left-big-picture",
-    alt: "left big picture",
+    id: "slider-2",
+    alt: "slider-2",
     desktop: {
       src:
         process.env.NODE_ENV !== "development"
-          ? "/mocks/image-desktop-1.jpg"
-          : "https://picsum.photos/472/728",
+          ? "</mocks/image-desktop-1.jpg>"
+          : "https://picsum.photos/1472/360",
       width: 1472,
       height: 360,
     },
     tablet: {
       src:
         process.env.NODE_ENV !== "development"
-          ? "/mocks/image-tablet-1.jpg"
-          : "https://picsum.photos/472/728",
+          ? "</mocks/image-tablet-1.jpg>"
+          : "https://picsum.photos/800/250",
       width: 800,
       height: 250,
     },
     mobile: {
       src:
         process.env.NODE_ENV !== "development"
-          ? "/mocks/image-mobile-1.jpg"
-          : "https://picsum.photos/472/728",
+          ? "</mocks/image-mobile-1.jpg>"
+          : "https://picsum.photos/540/200",
       width: 540,
       height: 200,
     },
   },
   {
-    id: "right-big-picture",
-    alt: "right big picture",
+    id: "slider-3",
+    alt: "slider-3",
     desktop: {
       src:
         process.env.NODE_ENV !== "development"
-          ? "/mocks/image-desktop-1.jpg"
-          : "https://picsum.photos/472/728",
+          ? "</mocks/image-desktop-1.jpg>"
+          : "https://picsum.photos/1472/360",
       width: 1472,
       height: 360,
     },
     tablet: {
       src:
         process.env.NODE_ENV !== "development"
-          ? "/mocks/image-tablet-1.jpg"
-          : "https://picsum.photos/472/728",
+          ? "</mocks/image-tablet-1.jpg>"
+          : "https://picsum.photos/800/250",
       width: 800,
       height: 250,
     },
     mobile: {
       src:
         process.env.NODE_ENV !== "development"
-          ? "/mocks/image-mobile-1.jpg"
-          : "https://picsum.photos/472/728",
+          ? "</mocks/image-mobile-1.jpg>"
+          : "https://picsum.photos/540/200",
       width: 540,
       height: 200,
     },
   },
   {
-    id: "right-small-picture",
-    alt: "right small picture",
+    id: "slider-4",
+    alt: "slider-4",
     desktop: {
       src:
         process.env.NODE_ENV !== "development"
-          ? "/mocks/image-desktop-1.jpg"
-          : "https://picsum.photos/305/305",
+          ? "</mocks/image-desktop-1.jpg>"
+          : "https://picsum.photos/1472/360",
       width: 1472,
       height: 360,
     },
     tablet: {
       src:
         process.env.NODE_ENV !== "development"
-          ? "/mocks/image-tablet-1.jpg"
-          : "https://picsum.photos/305/305",
+          ? "</mocks/image-tablet-1.jpg>"
+          : "https://picsum.photos/800/250",
       width: 800,
       height: 250,
     },
     mobile: {
       src:
         process.env.NODE_ENV !== "development"
-          ? "/mocks/image-mobile-1.jpg"
-          : "https://picsum.photos/472/472",
+          ? "</mocks/image-mobile-1.jpg>"
+          : "https://picsum.photos/540/200",
       width: 540,
       height: 200,
     },

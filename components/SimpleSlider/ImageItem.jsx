@@ -1,8 +1,18 @@
-import { Flex, Stack, Text, Box, Icon } from "@chakra-ui/react";
+import { Stack, Text } from "@chakra-ui/react";
 import Image from "next/image";
 import React from "react";
+import "../../styles/Slider.module.css";
+import { sliderImages } from "../../mocks/sliderImages";
+function ImageItem({ image, size }) {
 
-function ImageItem({ src, to, name, ...rest }) {
+  const imageObject = sliderImages.find((img) => img.id === image);
+
+  if (!imageObject && imageObject !== undefined) {
+    return null;
+  }
+
+  const { src, alt, width, height } = imageObject[size];
+
   return (
     <>
       <Stack
@@ -10,23 +20,25 @@ function ImageItem({ src, to, name, ...rest }) {
         direction={"column"}
         alignItems={"center"}
         overflow={"auto"}
-        {...rest}
       >
         <Image
           css={{
             borderRadius: "50px",
             objectFit: "cover",
             boxSize: "50px",
-            borderRadius: "100%",
+            borderRadius: "15px",
+            boxShadow: 'rgba(0, 0, 0, 0.15) 0px 5px 15px 0px'
           }}
-          width={50}
-          height={50}
+          
+          width={width}
+          height={height}
           src={src}
-          alt={name}
+          alt={alt}
+          loading={"lazy"}
           draggable={false}
         />
         <Text as={"span"} size={"sm"}>
-          {name}
+          {alt}
         </Text>
       </Stack>
     </>
