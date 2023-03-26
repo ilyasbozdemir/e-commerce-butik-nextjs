@@ -2,7 +2,7 @@ import React from "react";
 import Logo from "../../components/Logo";
 import { useRouter } from "next/router";
 import Link from "next/link";
-import { useToast } from "@chakra-ui/react";
+import { Flex, useToast } from "@chakra-ui/react";
 import {
   Button,
   Box,
@@ -204,23 +204,27 @@ function Footer() {
             </Stack>
           </Stack>
         </Stack>
-        <Stack
-          justify="center"
-          direction={{
-            base: "row",
-            md: "row",
-          }}
-          align="center"
-        >
-          <Text fontSize="sm" color="subtle">
-            &copy; {new Date().getFullYear() + " "}
-            Eflatun Butik. Tüm Hakları Saklıdır.
-          </Text>
-
-
-        </Stack>
 
         <Divider orientation="horizontal" />
+
+        <Flex bg={'blackAlpha.500'}>
+          <Stack
+            justify="center"
+            direction={{
+              base: "row",
+              md: "row",
+            }}
+            align="center"
+          >
+            <Text fontSize="sm" color="subtle">
+              &copy; {new Date().getFullYear() + " "}
+              Eflatun Butik. Tüm Hakları Saklıdır.
+            </Text>
+
+
+          </Stack>
+
+        </Flex>
         <Stack
           justify="flex-end"
           direction={{
@@ -243,6 +247,7 @@ function Footer() {
             tarafından geliştirilmiştir.
           </Text>
         </Stack>
+
       </Box>
     </>
   );
