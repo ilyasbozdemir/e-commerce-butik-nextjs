@@ -1,4 +1,4 @@
-import { Box, Button, Flex, Stack, Text, VStack } from "@chakra-ui/react";
+import { Button, Flex, Stack, Text, VStack } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
 
 function CountdownTimer() {
@@ -24,7 +24,9 @@ function CountdownTimer() {
   };
 
   useEffect(() => {
-    const countdownDate = new Date("2023-03-21T23:59:59").getTime();
+   
+    const countdownDate = new Date("2023-03-26T23:59:59").getTime();
+
     const interval = setInterval(() => {
       const now = new Date().getTime();
       const distance = countdownDate - now;
@@ -65,7 +67,12 @@ function CountdownTimer() {
           </Text>
         </Flex>
 
-        <Flex direction={"row"} justifyContent={"center"} gap={2}>
+        <Flex
+         direction={"row"} 
+         justifyContent={"center"} 
+         gap={2}
+         
+         >
           <VStack spacing={-1}>
             <Text fontSize={"semibold"}>{timeLeft.days}</Text>
             <Text color={"gray.100"}> DAY </Text>

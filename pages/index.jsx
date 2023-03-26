@@ -77,7 +77,7 @@ export default function HomePage() {
               <Banner />
             </Box>
             <Box id="CountdownTimer" as={"section"}>
-              <CountdownTimer />
+              <CountdownTimer  />
             </Box>
           </Flex>
 

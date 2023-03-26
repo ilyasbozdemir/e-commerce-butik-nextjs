@@ -3,30 +3,19 @@ import Logo from "../../components/Logo";
 import { useRouter } from "next/router";
 import Link from "next/link";
 import { useToast } from "@chakra-ui/react";
-import { Tooltip } from "@chakra-ui/react";
 import {
   Button,
-  ButtonGroup,
-  Container,
+  Box,
   Divider,
-  IconButton,
   Input,
   Stack,
   Text,
 } from "@chakra-ui/react";
 
-import {
-  FaGithub,
-  FaLinkedin,
-  FaPinterestP,
-  FaWhatsapp,
-  FaInstagram,
-  FaFacebookF,
-} from "react-icons/fa";
-
 import iyzicoLogo from "../../assests/iyzico_ile_ode_white.png";
-import appStoreBadge from "../../assests/app-store-badge.svg";
-import googlePlayBadge from "../../assests/google-play-badge.svg";
+//import appStoreBadge from "../../assests/app-store-badge.svg";
+//import appGalleryBadge from "../../assests/app-gallery-badge.svg";
+//import googlePlayBadge from "../../assests/google-play-badge.svg";
 
 import Image from "next/image";
 import SocialMediaButtons from "../SocialMediaButtons";
@@ -55,14 +44,13 @@ function Footer() {
     setEmail("");
   }
 
-  React.useEffect(() => {}, []);
+  React.useEffect(() => { }, []);
   const toast = useToast();
   return (
     <>
-      <Container
+      <Box
         pos={"relative"}
         as="footer"
-        maxW={"container.lg"}
         color={"white"}
         _light={{ bg: "blackAlpha.900" }}
         _dark={{ bg: "blackAlpha.900" }}
@@ -90,7 +78,7 @@ function Footer() {
             <ToggleDarkMode />
 
             <SocialMediaButtons />
-            
+
             <Text fontSize="13px">Güvenli Alışveriş</Text>
 
             <Link
@@ -118,6 +106,10 @@ function Footer() {
             spacing={{
               base: "12",
               md: "8",
+            }}
+            p={{
+              base: 3,
+              md: 0,
             }}
           >
             <Stack direction="row" spacing="2">
@@ -224,6 +216,8 @@ function Footer() {
             &copy; {new Date().getFullYear() + " "}
             Eflatun Butik. Tüm Hakları Saklıdır.
           </Text>
+
+
         </Stack>
 
         <Divider orientation="horizontal" />
@@ -249,7 +243,7 @@ function Footer() {
             tarafından geliştirilmiştir.
           </Text>
         </Stack>
-      </Container>
+      </Box>
     </>
   );
 }

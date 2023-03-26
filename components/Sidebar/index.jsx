@@ -26,7 +26,7 @@ import CategoryTabs from "../CategoryTabs";
 import Router from "next/router";
 import SocialMediaButtons from "../SocialMediaButtons";
 import ToggleDarkMode from "../ToggleDarkMode";
-function Sidebar({ onClose  }) {
+function Sidebar({ onClose }) {
   React.useEffect(() => {
     const handleRouteChangeStart = (url) => {
       onClose();
@@ -47,15 +47,11 @@ function Sidebar({ onClose  }) {
 
   const drawerRef = useRef();
 
-  const handleScroll = (event) => {
-    const { scrollTop, scrollHeight, clientHeight } = event.target;
-    if (scrollTop + clientHeight < scrollHeight) return;
-    console.log("");
-  };
+
   return (
     <>
       <>
-        <DrawerContent ref={drawerRef} onScroll={handleScroll}>
+        <DrawerContent ref={drawerRef}  overflowY="scroll" >
           <DrawerHeader>
             <Flex justifyContent={"space-between"} px={2} my={5}>
               <HStack>
@@ -76,67 +72,65 @@ function Sidebar({ onClose  }) {
               </Flex>
             </Flex>
           </DrawerHeader>
-          <DrawerBody overflowY="none">
-            <Flex as={"nav"}>
-              <CategoryTabs categories={linkItems} />
-            </Flex>
-          </DrawerBody>
-          <DrawerFooter>
-            <Flex
-              as="section"
-              justifyContent={"center"}
-              w={"100%"}
-              direction={"column"}
-            >
-              <Stack as={"footer"} m={2} direction={"column"} w={"100%"}>
-                <Flex align="center" justify="center">
-                  <Divider flex="1" borderColor="gray.300" />
-                  <Logo />
-                  <Divider flex="1" borderColor="gray.300" />
-                </Flex>
 
-                <Flex align="center" justify="center">
-                  <>
-                    <ToggleDarkMode />
-                  </>
-                </Flex>
-                <Flex align="center" justify="center">
-                  <Text fontSize="sm" color="gray.500">
-                    &copy; {new Date().getFullYear() + " "}
-                    Eflatun Butik.
-                  </Text>
-                </Flex>
-                <Flex align="center" justify="center">
-                  <HStack>
-                    <Stack fontWeight={"semibold"} fontSize={12}>
-                      <Link href="/iletisim" passHref>
-                        <HStack spacing={1} direction={"row"}>
-                          <Text>İletişim</Text>
-                        </HStack>
-                      </Link>
-                    </Stack>
-                    <Stack fontWeight={"semibold"} fontSize={12}>
-                      <Link href="/hakkimizda" passHref>
-                        <HStack spacing={1} direction={"row"}>
-                          <Text>Hakkımızda</Text>
-                        </HStack>
-                      </Link>
-                    </Stack>
-                    <Stack fontWeight={"semibold"} fontSize={12}>
-                      <Link href="/hesabim" passHref>
-                        <HStack spacing={1} direction={"row"}>
-                          <Text>Hesabım</Text>
-                        </HStack>
-                      </Link>
-                    </Stack>
-                  </HStack>
-                </Flex>
-                <Flex align="center" justify="center">
-                  <SocialMediaButtons />
-                </Flex>
-              </Stack>
-            </Flex>
-          </DrawerFooter>
+          <Flex as={"nav"}>
+            <CategoryTabs categories={linkItems} />
+          </Flex>
+
+          <Flex
+            as="section"
+            justifyContent={"center"}
+            w={"100%"}
+            direction={"column"}
+          >
+            <Stack as={"footer"} m={2} direction={"column"} w={"100%"}>
+              <Flex align="center" justify="center">
+                <Divider flex="1" borderColor="gray.300" />
+                <Logo />
+                <Divider flex="1" borderColor="gray.300" />
+              </Flex>
+
+              <Flex align="center" justify="center">
+                <>
+                  <ToggleDarkMode />
+                </>
+              </Flex>
+              <Flex align="center" justify="center">
+                <Text fontSize="sm" color="gray.500">
+                  &copy; {new Date().getFullYear() + " "}
+                  Eflatun Butik.
+                </Text>
+              </Flex>
+              <Flex align="center" justify="center">
+                <HStack>
+                  <Stack fontWeight={"semibold"} fontSize={12}>
+                    <Link href="/iletisim" passHref>
+                      <HStack spacing={1} direction={"row"}>
+                        <Text>İletişim</Text>
+                      </HStack>
+                    </Link>
+                  </Stack>
+                  <Stack fontWeight={"semibold"} fontSize={12}>
+                    <Link href="/hakkimizda" passHref>
+                      <HStack spacing={1} direction={"row"}>
+                        <Text>Hakkımızda</Text>
+                      </HStack>
+                    </Link>
+                  </Stack>
+                  <Stack fontWeight={"semibold"} fontSize={12}>
+                    <Link href="/hesabim" passHref>
+                      <HStack spacing={1} direction={"row"}>
+                        <Text>Hesabım</Text>
+                      </HStack>
+                    </Link>
+                  </Stack>
+                </HStack>
+              </Flex>
+              <Flex align="center" justify="center">
+                <SocialMediaButtons />
+              </Flex>
+            </Stack>
+          </Flex>
         </DrawerContent>
       </>
     </>
