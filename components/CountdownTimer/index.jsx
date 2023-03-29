@@ -75,19 +75,19 @@ function CountdownTimer() {
          >
           <VStack spacing={-1}>
             <Text fontSize={"semibold"}>{timeLeft.days}</Text>
-            <Text color={"gray.100"}> DAY </Text>
+            <Text color={"gray.400"}> DAY </Text>
           </VStack>
           <VStack spacing={-1}>
             <Text fontSize={"semibold"}>{timeLeft.hours}</Text>
-            <Text color={"gray.100"}> HRS </Text>
+            <Text color={"gray.400"}> HRS </Text>
           </VStack>
           <VStack spacing={-1}>
             <Text fontSize={"semibold"}>{timeLeft.minutes}</Text>
-            <Text color={"gray.100"}> MIN </Text>
+            <Text color={"gray.400"}> MIN </Text>
           </VStack>
           <VStack spacing={-1}>
             <Text fontSize={"semibold"}>{timeLeft.seconds}</Text>
-            <Text color={"gray.100"}> SEC </Text>
+            <Text color={"gray.400"}> SEC </Text>
           </VStack>
         </Flex>
 

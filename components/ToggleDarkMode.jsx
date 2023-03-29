@@ -23,7 +23,6 @@ function ToggleDarkMode() {
     <>
       <Switch
         size="md"
-        colorScheme="purple"
         isChecked={!isDarkMode}
         icon={<Box as={!isDarkMode ? Sun : Moon} />}
         sx={{
