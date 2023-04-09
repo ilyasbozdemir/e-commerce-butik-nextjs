@@ -1,15 +1,14 @@
 import Head from "next/head";
-import axios from "axios";
 import { Box, Center, useBreakpointValue } from "@chakra-ui/react";
-import absoluteUrl from "next-absolute-url";
 import { useEffect, useState } from "react";
+import CategoryContainer from "../../containers/Category/CategoryContainer";
 
 const baseUrl =
   process.env.NODE_ENV === "production"
     ? "{myproductionurl}"
     : "http://localhost:3000";
 
-function DynamicCategoryPage({ category }) {
+function DynamicCategoryPage({ category, productData }) {
   const variants = useBreakpointValue({
     base: { isCenter: false },
     md: { isCenter: true },
@@ -28,10 +27,15 @@ function DynamicCategoryPage({ category }) {
   return (
     <>
       <Head>
-        <title>{category.title + " • siteName"}</title>
+        <title>{category.title + " • siteName  "}</title>
       </Head>
       <Box as={variants?.isCenter === true ? Box : Center}>
-        <Box mt={5} mx={2}></Box>
+        <Box mt={2} mx={2}>
+          <CategoryContainer
+            category={category.title}
+            productData={productData}
+          />
+        </Box>
       </Box>
     </>
   );
@@ -45,10 +49,23 @@ export async function getStaticProps({ params }) {
     (item) => item.path === params.dynamic_category
   );
 
+  const res2 = await fetch(`${baseUrl}/api/categories`);
+
+  const productData = [
+    { id: 1 },
+    { id: 2 },
+    { id: 3 },
+    { id: 4 },
+    { id: 5 },
+    { id: 6 },
+  ];
+
   return {
     props: {
       category,
+      productData,
     },
+    revalidate: 60 * 5, // * 5 dakikada bir önbelleği yeniler.
   };
 }
 
@@ -59,8 +76,8 @@ export async function getStaticPaths() {
     params: { dynamic_category: category.path },
   }));
   return {
-    paths, // * önceden sunucuya path'ları temsil eden bir dizi verir.
-    fallback: false, // ! eğer verilen path'lerden eşleşen olmazsa hata sayfası fırlatır.
+    paths,
+    fallback: false,
   };
 }
 

@@ -4,6 +4,7 @@ import { linkItems } from "../../constants/linkItems";
 import Navbar from "../Navbar";
 
 function HeaderBottom() {
+
   return (
     <Flex
       as={"nav"}

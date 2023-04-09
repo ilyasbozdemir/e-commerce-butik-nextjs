@@ -3,6 +3,7 @@ import { MainContext } from "../contexts/MainContext";
 import { ChakraProvider } from "@chakra-ui/react";
 import AdminLayout from "../layouts/AdminLayout";
 import UserLayout from "../layouts/UserLayout";
+import EmptyLayout from "../layouts/EmptyLayout";
 import theme from "../src/theme";
 import React from "react";
 import { useRouter } from "next/router";
@@ -13,14 +14,21 @@ function MyApp({ Component, pageProps }) {
   let Layout;
   const router = useRouter();
 
+  const InstalledWebSite = true;
+
+  if (!InstalledWebSite) router.push("kurulum");
+
   if (router.pathname === "/") {
     Layout = UserLayout;
   } else if (router.pathname.startsWith("/admin")) {
     Layout = AdminLayout;
+  } else if (router.pathname === "/kurulum") {
+    Layout = EmptyLayout;
+  } else if (router.pathname === "/linktree") {
+    Layout = EmptyLayout;
   } else {
     Layout = UserLayout;
   }
-
 
   return (
     <ChakraProvider resetCSS theme={theme}>

@@ -17,9 +17,9 @@ export default function Navbar({ link }) {
   return (
     <>
       <Menu isOpen={isOpen} pos={"relative"} isLazy>
-        <Link href={link.href} passHref>
+        <Link href={"/" + link.href} passHref>
           <MenuButton
-            h={'50px'}
+            h={"50px"}
             mx={1}
             py={[1, 2, 2]}
             px={4}
@@ -35,20 +35,17 @@ export default function Navbar({ link }) {
             onMouseLeave={onClose}
             textTransform="uppercase"
             className={"nav-item"}
-            textAlign={'center'}
+            textAlign={"center"}
           >
-
             {link.label}
           </MenuButton>
         </Link>
-
 
         {link.childrens?.length !== 0 ? (
           <MenuList onMouseEnter={onOpen} onMouseLeave={onClose}>
             {link.childrens?.map((link, i) => (
               <HStack>
                 <Link href={link.href} key={i} legacyBehavior passHref>
-
                   <MenuItem
                     key={i}
                     link={link}
@@ -63,9 +60,7 @@ export default function Navbar({ link }) {
                     <Text as={"span"}>{link.label}</Text>
                   </MenuItem>
                 </Link>
-
               </HStack>
-
             ))}
           </MenuList>
         ) : (
