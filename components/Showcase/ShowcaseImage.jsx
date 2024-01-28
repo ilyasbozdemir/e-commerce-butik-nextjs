@@ -1,5 +1,5 @@
 import { Box } from "@chakra-ui/react";
-import Image from "next/Image";
+import Image from "next/image";
 import React, { useEffect } from "react";
 import { showcaseImages } from "../../mocks/showcaseImages";
 
