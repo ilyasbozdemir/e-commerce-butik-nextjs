@@ -5,7 +5,7 @@ export const showcaseImages = [
     desktop: {
       src:
         process.env.NODE_ENV !== "development"
-          ? "/mocks/image-desktop-1.jpg"
+          ? "https://picsum.photos/1472/360"
           : "https://picsum.photos/1472/360",
       width: 1472,
       height: 360,
@@ -13,7 +13,7 @@ export const showcaseImages = [
     tablet: {
       src:
         process.env.NODE_ENV !== "development"
-          ? "/mocks/image-tablet-1.jpg"
+          ? "https://picsum.photos/800/250"
           : "https://picsum.photos/800/250",
       width: 800,
       height: 250,
@@ -21,7 +21,7 @@ export const showcaseImages = [
     mobile: {
       src:
         process.env.NODE_ENV !== "development"
-          ? "/mocks/image-mobile-1.jpg"
+          ? "https://picsum.photos/540/200"
           : "https://picsum.photos/540/200",
       width: 540,
       height: 200,
@@ -33,7 +33,7 @@ export const showcaseImages = [
     desktop: {
       src:
         process.env.NODE_ENV !== "development"
-          ? "/mocks/image-desktop-1.jpg"
+          ? "https://picsum.photos/472/728"
           : "https://picsum.photos/472/728",
       width: 1472,
       height: 360,
@@ -41,7 +41,7 @@ export const showcaseImages = [
     tablet: {
       src:
         process.env.NODE_ENV !== "development"
-          ? "/mocks/image-tablet-1.jpg"
+          ? "https://picsum.photos/472/728"
           : "https://picsum.photos/472/728",
       width: 800,
       height: 250,
@@ -49,7 +49,7 @@ export const showcaseImages = [
     mobile: {
       src:
         process.env.NODE_ENV !== "development"
-          ? "/mocks/image-mobile-1.jpg"
+          ? "https://picsum.photos/472/728"
           : "https://picsum.photos/472/728",
       width: 540,
       height: 200,
@@ -61,7 +61,7 @@ export const showcaseImages = [
     desktop: {
       src:
         process.env.NODE_ENV !== "development"
-          ? "/mocks/image-desktop-1.jpg"
+          ? "https://picsum.photos/472/728"
           : "https://picsum.photos/472/728",
       width: 1472,
       height: 360,
@@ -69,7 +69,7 @@ export const showcaseImages = [
     tablet: {
       src:
         process.env.NODE_ENV !== "development"
-          ? "/mocks/image-tablet-1.jpg"
+          ? "https://picsum.photos/472/728"
           : "https://picsum.photos/472/728",
       width: 800,
       height: 250,
@@ -77,7 +77,7 @@ export const showcaseImages = [
     mobile: {
       src:
         process.env.NODE_ENV !== "development"
-          ? "/mocks/image-mobile-1.jpg"
+          ? "https://picsum.photos/472/728"
           : "https://picsum.photos/472/728",
       width: 540,
       height: 200,
@@ -89,7 +89,7 @@ export const showcaseImages = [
     desktop: {
       src:
         process.env.NODE_ENV !== "development"
-          ? "/mocks/image-desktop-1.jpg"
+          ? "https://picsum.photos/305/305"
           : "https://picsum.photos/305/305",
       width: 1472,
       height: 360,
@@ -97,7 +97,7 @@ export const showcaseImages = [
     tablet: {
       src:
         process.env.NODE_ENV !== "development"
-          ? "/mocks/image-tablet-1.jpg"
+          ? "https://picsum.photos/305/305"
           : "https://picsum.photos/305/305",
       width: 800,
       height: 250,
@@ -105,7 +105,7 @@ export const showcaseImages = [
     mobile: {
       src:
         process.env.NODE_ENV !== "development"
-          ? "/mocks/image-mobile-1.jpg"
+          ? "https://picsum.photos/472/472"
           : "https://picsum.photos/472/472",
       width: 540,
       height: 200,

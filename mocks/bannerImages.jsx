@@ -5,7 +5,7 @@ export const bannerImages = [
     desktop: {
       src:
         process.env.NODE_ENV !== "development"
-          ? "/mocks/image-desktop-1.jpg"
+          ? "https://picsum.photos/1472/115"
           : "https://picsum.photos/1472/115",
       width: 1472,
       height: 360,
@@ -13,7 +13,7 @@ export const bannerImages = [
     tablet: {
       src:
         process.env.NODE_ENV !== "development"
-          ? "/mocks/image-tablet-1.jpg"
+          ? "https://picsum.photos/800/110"
           : "https://picsum.photos/800/110",
       width: 800,
       height: 250,
@@ -21,7 +21,7 @@ export const bannerImages = [
     mobile: {
       src:
         process.env.NODE_ENV !== "development"
-          ? "/mocks/image-mobile-1.jpg"
+          ? "https://picsum.photos/540/50"
           : "https://picsum.photos/540/50",
       width: 540,
       height: 200,
