@@ -2,7 +2,7 @@ import { Stack, Text } from "@chakra-ui/react";
 import Image from "next/image";
 import React from "react";
 import "../../styles/Slider.module.css";
-import { sliderImages } from "../../mocks/sliderImages";
+import { sliderImages } from "../../src/mocks/sliderImages";
 function ImageItem({ image, size }) {
 
   const imageObject = sliderImages.find((img) => img.id === image);

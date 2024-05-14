@@ -1,7 +1,7 @@
 import { Box } from "@chakra-ui/react";
 import Image from "next/image";
 import React, { useEffect } from "react";
-import { showcaseImages } from "../../mocks/showcaseImages";
+import { showcaseImages } from "../../src/mocks/showcaseImages";
 
 function ShowcaseImage({ image, size }) {
   const imageObject = showcaseImages.find((img) => img.id === image);

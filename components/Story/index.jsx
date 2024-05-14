@@ -5,7 +5,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { Box, Flex } from "@chakra-ui/react";
 import ImageItem from "./ImageItem";
-import { images } from "../../mocks/storyImages";
+import { images } from "../../src/mocks/storyImages";
 
 const Slider = dynamic(() => import("react-slick"), {
   ssr: false,
