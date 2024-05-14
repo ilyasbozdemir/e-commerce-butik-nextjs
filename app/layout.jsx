@@ -1,7 +1,6 @@
 import { cookies } from "next/headers";
 
-import Header from '../components/Header'
-import Footer from '../components/Footer'
+
 import { Providers } from "./providers";
 
 export const metadata = {
