@@ -25,7 +25,7 @@ export default function RootLayout({
       <body>
         <Providers colorMode={colorMode?.value}>
 
-        <Header />
+          <Header />
           {children}
           <Footer />
         </Providers>

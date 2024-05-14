@@ -66,7 +66,7 @@ function Header({ onOpen }) {
               <CountdownTimer />
             </>
           ) : (
-            null
+            <></>
           )}
 
           <Banner />
