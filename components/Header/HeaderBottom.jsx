@@ -1,3 +1,5 @@
+'use client'
+
 import { Flex } from "@chakra-ui/react";
 import React from "react";
 import { linkItems } from "../../constants/linkItems";

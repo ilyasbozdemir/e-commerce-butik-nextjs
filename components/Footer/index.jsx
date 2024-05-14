@@ -1,21 +1,18 @@
+'use client'
+
 import React from 'react'
 import Logo from '../../components/Logo'
-import { useRouter } from 'next/router'
 import Link from 'next/link'
 import { Flex, useToast } from '@chakra-ui/react'
 import { Button, Box, Divider, Input, Stack, Text } from '@chakra-ui/react'
 
 import iyzicoLogo from '../../assests/iyzico_ile_ode_white.png'
-//import appStoreBadge from "../../assests/app-store-badge.svg";
-//import appGalleryBadge from "../../assests/app-gallery-badge.svg";
-//import googlePlayBadge from "../../assests/google-play-badge.svg";
 
 import Image from 'next/image'
 import SocialMediaButtons from '../SocialMediaButtons'
 import ToggleDarkMode from '../ToggleDarkMode'
 
 function Footer() {
-  const router = useRouter()
 
   const [email, setEmail] = React.useState('')
 

@@ -12,7 +12,7 @@ const theme = extendTheme({
     },
   },
   config: {
-    initialColorMode: "system",
+    initialColorMode: "light",
     useSystemColorMode: true,
     cssVarPrefix: "e-commerce-butik",
   },

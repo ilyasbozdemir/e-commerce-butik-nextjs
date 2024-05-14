@@ -1,5 +1,7 @@
+'use client'
+
+
 import { Box } from "@chakra-ui/react";
-import Image from "next/Image";
 import React, { useEffect, useState } from "react";
 import { bannerImages } from "../../mocks/bannerImages";
 function Banner() {

@@ -1,3 +1,7 @@
+'use client'
+
+
+
 import React, { useState as UseState } from "react";
 import { AiOutlineHeart, AiOutlineHome } from "react-icons/ai";
 import { MdOutlineManageSearch } from "react-icons/md";

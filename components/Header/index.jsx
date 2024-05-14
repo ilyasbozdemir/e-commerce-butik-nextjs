@@ -1,3 +1,6 @@
+'use client'
+
+
 import { Box, Divider, Flex } from '@chakra-ui/react'
 
 import HeaderTop from './HeaderTop'
@@ -9,7 +12,7 @@ import CountdownTimer from '../CountdownTimer'
 
 import BottomNavigation from '../BottomNavigation'
 import { useEffect, useRef, useState } from 'react'
-import { useRouter } from 'next/router'
+import { usePathname } from 'next/navigation'
 
 function Header({ onOpen }) {
   const boxShadow = `rgba(0, 0, 0, 0.07) 0px 1px 1px,
@@ -37,7 +40,7 @@ function Header({ onOpen }) {
 
   const headerRef = useRef(null)
 
-  const router = useRouter()
+  const pathname = usePathname()
 
   return (
     <>
@@ -60,7 +63,7 @@ function Header({ onOpen }) {
           display={{ base: 'none', md: 'initial' }}
           w={'100%'}
         >
-          {router.pathname === '/' ? (
+          {pathname === '/' ? (
             <>
               <CountdownTimer />
             </>
