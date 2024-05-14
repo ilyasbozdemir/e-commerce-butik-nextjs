@@ -1,70 +1,69 @@
-'use client'
+"use client";
 
-import React from 'react'
-import Logo from '../../components/Logo'
-import Link from 'next/link'
-import { Flex, useToast } from '@chakra-ui/react'
-import { Button, Box, Divider, Input, Stack, Text } from '@chakra-ui/react'
+import React from "react";
+import Logo from "../../components/Logo";
+import Link from "next/link";
+import { Flex, useToast } from "@chakra-ui/react";
+import { Button, Box, Divider, Input, Stack, Text } from "@chakra-ui/react";
 
-import iyzicoLogo from '../../assests/iyzico_ile_ode_white.png'
+import iyzicoLogo from "../../assests/iyzico_ile_ode_white.png";
 
-import Image from 'next/image'
-import SocialMediaButtons from '../SocialMediaButtons'
-import ToggleDarkMode from '../ToggleDarkMode'
+import Image from "next/image";
+import SocialMediaButtons from "../SocialMediaButtons";
+import ToggleDarkMode from "../ToggleDarkMode";
 
 function Footer() {
-
-  const [email, setEmail] = React.useState('')
+  const [email, setEmail] = React.useState("");
 
   function handleInputChange(e) {
-    setEmail(e.target.value)
+    setEmail(e.target.value);
   }
 
   function handleFormSubmit(e) {
-    e.preventDefault()
+    e.preventDefault();
 
     toast({
-      title: 'Abone olundu.',
-      status: 'success',
+      title: "Abone olundu.",
+      status: "success",
       duration: 9000,
       isClosable: true,
-      position: 'top-right',
-    })
+      position: "top-right",
+    });
 
-    setEmail('')
+    setEmail("");
   }
 
-  React.useEffect(() => {}, [])
-  const toast = useToast()
+  React.useEffect(() => {}, []);
+  const toast = useToast();
   return (
     <>
       <Box
-        display={'none'}
-        pos={'relative'}
+        display={"none"}
+        pos={"relative"}
         as="footer"
-        color={'white'}
-        _light={{ bg: 'blackAlpha.900' }}
-        _dark={{ bg: 'blackAlpha.900' }}
+        color={"white"}
+        _light={{ bg: "blackAlpha.900" }}
+        _dark={{ bg: "blackAlpha.900" }}
         marginTop={10}
-        mb={{ base: '82px', md: 0 }}
+        mb={{ base: "82px", md: 0 }}
       >
         <Divider marginBottom={3} />
         <Stack
           spacing="8"
           direction={{
-            base: 'column',
-            md: 'row',
+            base: "column",
+            md: "row",
           }}
           justify="space-between"
           py={{
-            base: '8',
-            md: '12',
+            base: "8",
+            md: "12",
           }}
         >
-          <Stack align="center" justifyContent={'center'} ml={10} mr={10}>
+          <Stack align="center" justifyContent={"center"} ml={10} mr={10}>
             <Logo />
 
-            <Text color="muted.200">En Trend Kadın Giyim</Text>
+            <Text color="muted.200">En Trend Erkek Giyim</Text>
 
             <ToggleDarkMode />
 
@@ -74,7 +73,7 @@ function Footer() {
 
             <Link
               href="https://www.iyzico.com/"
-              target={'_blank'}
+              target={"_blank"}
               rel="noopener noreferrer"
               passHref
             >
@@ -90,13 +89,13 @@ function Footer() {
 
           <Stack
             direction={{
-              base: 'column',
-              md: 'column',
-              lg: 'row',
+              base: "column",
+              md: "column",
+              lg: "row",
             }}
             spacing={{
-              base: '12',
-              md: '8',
+              base: "12",
+              md: "8",
             }}
             p={{
               base: 3,
@@ -172,11 +171,11 @@ function Footer() {
                 <Stack
                   spacing="4"
                   direction={{
-                    base: 'column',
-                    sm: 'row',
+                    base: "column",
+                    sm: "row",
                   }}
                   maxW={{
-                    lg: '360px',
+                    lg: "360px",
                   }}
                 >
                   <Input
@@ -198,56 +197,58 @@ function Footer() {
 
         <Divider orientation="horizontal" />
 
-        <Flex bg={'blackAlpha.500'}>
+        <Flex bg={"blackAlpha.500"}>
           <Stack
             justify="center"
             direction={{
-              base: 'row',
-              md: 'row',
+              base: "row",
+              md: "row",
             }}
             align="center"
           >
             <Text fontSize="sm" color="subtle">
-              &copy; {new Date().getFullYear() + ' '}
-              Eflatun Butik. Tüm Hakları Saklıdır.
+              &copy; {new Date().getFullYear() + " "}
+              E-Commerce . Tüm Hakları Saklıdır.
             </Text>
           </Stack>
         </Flex>
         <Stack
           justify="flex-end"
           direction={{
-            base: 'column',
-            md: 'row',
+            base: "column",
+            md: "row",
           }}
           align="center"
-          bg={'blackAlpha.800'}
+          bg={"blackAlpha.800"}
         >
           <Text textAlign="center" fontSize="sm" color="subtle">
             Bu websitesi
             <Link
-              target={'_blank'}
+              target={"_blank"}
               rel="noopener noreferrer"
-              href={'https://github.com/ilyasbozdemir'}
+              href={
+                "https://ilyasbozdemir.dev?utm_source=developed_site&utm_medium=referral&utm_campaign=ecommerce_campaign"
+              }
               passHref
             >
               <> İlyas Bozdemir</>
-            </Link>{' '}
+            </Link>{" "}
             tarafından geliştirilmiştir.
           </Text>
         </Stack>
       </Box>
       <Box
         h={500}
-        pos={'relative'}
+        pos={"relative"}
         as="footer"
-        color={'white'}
-        _light={{ bg: 'blackAlpha.900' }}
-        _dark={{ bg: 'blackAlpha.900' }}
+        color={"white"}
+        _light={{ bg: "blackAlpha.900" }}
+        _dark={{ bg: "blackAlpha.900" }}
         marginTop={10}
-        mb={{ base: '82px', md: 0 }}
+        mb={{ base: "82px", md: 0 }}
       ></Box>
     </>
-  )
+  );
 }
 
-export default Footer
+export default Footer;

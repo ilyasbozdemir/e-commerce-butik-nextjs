@@ -1,5 +1,7 @@
 import { cookies } from "next/headers";
 
+import Header from '../components/Header'
+import Footer from '../components/Footer'
 
 import { Providers } from "./providers";
 
@@ -21,8 +23,14 @@ export default function RootLayout({
 
       </head>
       <body>
+        <Providers colorMode={colorMode?.value}>
 
-        <Providers colorMode={colorMode?.value}>{children}</Providers>
+        <Header />
+          {children}
+          <Footer />
+        </Providers>
+
+
 
       </body>
     </html>

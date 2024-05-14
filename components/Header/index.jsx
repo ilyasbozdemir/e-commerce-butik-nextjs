@@ -21,8 +21,6 @@ function Header({ onOpen }) {
                     rgba(0, 0, 0, 0.07) 0px 8px 8px`
 
   const [scrolled, setScrolled] = useState(false)
-  const [showBody, setShowBody] = useState(false)
-  const [showBottom, setShowBottom] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -68,7 +66,7 @@ function Header({ onOpen }) {
               <CountdownTimer />
             </>
           ) : (
-            <></>
+            null
           )}
 
           <Banner />
@@ -88,7 +86,7 @@ function Header({ onOpen }) {
       <Flex display={{ base: 'initial', md: 'none' }} w={'100%'}>
         <BottomNavigation />
       </Flex>
-      
+
     </>
   )
 }
