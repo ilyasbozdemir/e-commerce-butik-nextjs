@@ -210,7 +210,7 @@ function Screen3() {
           <FormLabel htmlFor="database">Veritabanı Seçimi</FormLabel>
           <Select id="database" value={database} onChange={handleSelect}>
             <option value="">Lütfen bir veritabanı seçin</option>
-            <option value="postgresql">MS SQL</option>
+            <option value="ms-sql">MS SQL</option>
             <option value="postgresql">PostgreSQL</option>
             <option value="mysql">MySQL</option>
             <option value="mongodb">MongoDB</option>
@@ -228,6 +228,20 @@ function Screen3() {
               value={connectionString}
               onChange={handleConnectionStringChange}
               placeholder='Örn: "Provider=PostgreSQL OLE DB Provider;Data Source=myServerAddress;location=myDataBase;User ID=myUsername;password=myPassword;"'
+            />
+          </FormControl>
+        )}
+        {database === "ms-sql" && (
+          <FormControl mt={4}>
+            <FormLabel htmlFor="connection-string">
+              Mysql Bağlantı Dizesi :
+            </FormLabel>
+            <Input
+              type="text"
+              id="connection-string"
+              value={connectionString}
+              onChange={handleConnectionStringChange}
+              placeholder='Örn: "Server=myServerAddress;Database=myDataBase;User Id=myUsername;Password=myPassword;"'
             />
           </FormControl>
         )}
