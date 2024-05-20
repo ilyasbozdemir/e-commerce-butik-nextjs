@@ -20,7 +20,7 @@ import Logo from "../Logo";
 
 import { MdArrowBackIos } from "react-icons/md";
 import SearchBox from "../Header/SearchBox";
-import { linkItems } from "../../constants/linkItems";
+
 import CategoryTabs from "../CategoryTabs";
 
 import Router from "next/router";
@@ -31,8 +31,8 @@ function Sidebar({ onClose }) {
     const handleRouteChangeStart = (url) => {
       onClose();
     };
-    const handleRouteChangeComplete = (url) => {};
-    const handleRouteChangeError = (err, url) => {};
+    const handleRouteChangeComplete = (url) => { };
+    const handleRouteChangeError = (err, url) => { };
 
     Router.events.on("routeChangeStart", handleRouteChangeStart);
     Router.events.on("routeChangeComplete", handleRouteChangeComplete);
@@ -51,7 +51,7 @@ function Sidebar({ onClose }) {
   return (
     <>
       <>
-        <DrawerContent ref={drawerRef}  overflowY="scroll" >
+        <DrawerContent ref={drawerRef} overflowY="scroll" >
           <DrawerHeader>
             <Flex justifyContent={"space-between"} px={2} my={5}>
               <HStack>
@@ -74,7 +74,7 @@ function Sidebar({ onClose }) {
           </DrawerHeader>
 
           <Flex as={"nav"}>
-            <CategoryTabs categories={linkItems} />
+            <CategoryTabs  />
           </Flex>
 
           <Flex
