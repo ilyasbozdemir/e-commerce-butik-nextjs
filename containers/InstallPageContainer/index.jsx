@@ -15,10 +15,8 @@ import Screen1 from "./Screen1";
 import Screen2 from "./Screen2";
 import Screen3 from "./Screen3";
 import Screen4 from "./Screen4";
-import Screen5 from "./Screen5";
 
 import ScreenSwitcher from "../../components/ScreenSwitcher";
-import InstallCompletedButton from "./installCompletedButton";
 
 function InstallPage() {
   const [flagSelected, setFlagSelected] = useState("TR");
@@ -108,7 +106,12 @@ function InstallPage() {
                     </Button>
                   </Flex>
                   {step === screens.length - 1 ? (
-                    <InstallCompletedButton />
+                    <Button
+                      colorScheme="blue"
+                      variant="outline"
+                    >
+                      Kurulumu Tamamla
+                    </Button>
                   ) : null}
                 </Flex>
               </ButtonGroup>
