@@ -7,7 +7,7 @@ function MaintenancePage() {
         <title>Site Bakımda &#x2022; [siteName] | [desc]</title>
       </Head>
       <>
-        site-yapim-aşamasinda
+      Site Bakım Aşamasında
       </>
     </>
   )
