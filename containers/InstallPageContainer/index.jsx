@@ -86,7 +86,7 @@ function InstallPage() {
                         setProgress(100);
                       }}
                       isDisabled={step === 1}
-                      colorScheme="teal"
+                      colorScheme="blue"
                       variant="solid"
                       w="7rem"
                       mr="5%"
@@ -99,7 +99,7 @@ function InstallPage() {
                       onClick={() => {
                         setStep(step + 1);
                       }}
-                      colorScheme="teal"
+                      colorScheme="blue"
                       variant="outline"
                     >
                       İleri
