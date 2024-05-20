@@ -210,6 +210,7 @@ function Screen3() {
           <FormLabel htmlFor="database">Veritabanı Seçimi</FormLabel>
           <Select id="database" value={database} onChange={handleSelect}>
             <option value="">Lütfen bir veritabanı seçin</option>
+            <option value="postgresql">MS SQL</option>
             <option value="postgresql">PostgreSQL</option>
             <option value="mysql">MySQL</option>
             <option value="mongodb">MongoDB</option>
