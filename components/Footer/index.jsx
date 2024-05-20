@@ -33,12 +33,11 @@ function Footer() {
     setEmail("");
   }
 
-  React.useEffect(() => {}, []);
+  React.useEffect(() => { }, []);
   const toast = useToast();
   return (
     <>
       <Box
-        display={"none"}
         pos={"relative"}
         as="footer"
         color={"white"}
@@ -197,7 +196,7 @@ function Footer() {
 
         <Divider orientation="horizontal" />
 
-        <Flex bg={"blackAlpha.500"}>
+        <Flex bg={"blackAlpha.500"} justifyContent={'space-around'}>
           <Stack
             justify="center"
             direction={{
@@ -211,42 +210,33 @@ function Footer() {
               E-Commerce . Tüm Hakları Saklıdır.
             </Text>
           </Stack>
+          <Stack
+            justify="center"
+            direction={{
+              base: "column",
+              md: "row",
+            }}
+            align="center"
+          >
+            <Text textAlign="center" fontSize="sm" color="subtle">
+              Bu websitesi
+              <Link
+                target={"_blank"}
+                rel="noopener noreferrer"
+                href={
+                  "https://ilyasbozdemir.dev?utm_source=developed_site&utm_medium=referral&utm_campaign=ecommerce_campaign"
+                }
+                passHref
+              >
+                <> İlyas Bozdemir</>
+              </Link>{" "}
+              tarafından geliştirilmiştir.
+            </Text>
+          </Stack>
         </Flex>
-        <Stack
-          justify="flex-end"
-          direction={{
-            base: "column",
-            md: "row",
-          }}
-          align="center"
-          bg={"blackAlpha.800"}
-        >
-          <Text textAlign="center" fontSize="sm" color="subtle">
-            Bu websitesi
-            <Link
-              target={"_blank"}
-              rel="noopener noreferrer"
-              href={
-                "https://ilyasbozdemir.dev?utm_source=developed_site&utm_medium=referral&utm_campaign=ecommerce_campaign"
-              }
-              passHref
-            >
-              <> İlyas Bozdemir</>
-            </Link>{" "}
-            tarafından geliştirilmiştir.
-          </Text>
-        </Stack>
+
       </Box>
-      <Box
-        h={500}
-        pos={"relative"}
-        as="footer"
-        color={"white"}
-        _light={{ bg: "blackAlpha.900" }}
-        _dark={{ bg: "blackAlpha.900" }}
-        marginTop={10}
-        mb={{ base: "82px", md: 0 }}
-      ></Box>
+
     </>
   );
 }

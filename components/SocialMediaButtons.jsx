@@ -19,6 +19,7 @@ function SocialMediaButtons() {
         >
           <IconButton
             aria-label="Facebook"
+            color={'white'}
             icon={<FaFacebookF fontSize="1.25rem" />}
             _hover={{ bg: "blue.500", color: " white" }}
           />
@@ -32,6 +33,7 @@ function SocialMediaButtons() {
         >
           <IconButton
             as="button"
+            color={'white'}
             aria-label="Instagram"
             icon={<FaInstagram fontSize="1.25rem" />}
             _hover={{
@@ -49,6 +51,7 @@ function SocialMediaButtons() {
         >
           <IconButton
             as="button"
+            color={'white'}
             aria-label="Whatsapp"
             icon={<FaWhatsapp fontSize="1.25rem" />}
             _hover={{ bg: "#25D366", color: " white" }}
@@ -58,6 +61,7 @@ function SocialMediaButtons() {
         <Tooltip
           label="Pinterest"
           aria-label="Pinterest"
+          
           hasArrow
           placement="top"
           bg="purple.400"
@@ -65,6 +69,7 @@ function SocialMediaButtons() {
           <IconButton
             as="button"
             aria-label="Pinterest"
+            color={'white'}
             icon={<FaPinterestP fontSize="1.25rem" />}
             _hover={{ bg: "#BD081C", color: " white" }}
           />
