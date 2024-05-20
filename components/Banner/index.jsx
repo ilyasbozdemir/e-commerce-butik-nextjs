@@ -3,7 +3,7 @@
 
 import { Box } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
-import { bannerImages } from "../../src/mocks/bannerImages";
+import { bannerImages } from "../../mocks/bannerImages";
 function Banner() {
   const [size, setSize] = useState("mobile");
 
