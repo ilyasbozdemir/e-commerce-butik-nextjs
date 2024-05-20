@@ -14,7 +14,7 @@ import {
 
 import Image from "next/image";
 import Link from "next/link";
-import nextJsLogo from "../../assests/nextjs.png";
+import {nextJsLogo} from "../../assests/nextjs.png";
 import ReactFlagsSelect from "react-flags-select";
 
 import Screen1 from "./Screen1";
