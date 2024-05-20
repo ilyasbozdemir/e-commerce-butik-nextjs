@@ -28,7 +28,7 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-flags-select": "^2.2.3",
-    "react-icons": "^4.12.0",
+    "react-icons": "^5.2.1",
     "react-query": "^3.39.3",
     "react-responsive-carousel": "^3.2.23",
     "react-search-box": "^3.0.0",

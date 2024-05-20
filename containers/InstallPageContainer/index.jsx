@@ -5,18 +5,12 @@ import {
   Box,
   Heading,
   Flex,
-  Text,
-  Stack,
   ButtonGroup,
   Button,
   Progress,
 } from "@chakra-ui/react";
 
-import Image from "next/image";
-import Link from "next/link";
-import {nextJsLogo} from "../../assests/nextjs.png";
 import ReactFlagsSelect from "react-flags-select";
-
 import Screen1 from "./Screen1";
 import Screen2 from "./Screen2";
 import Screen3 from "./Screen3";
@@ -64,14 +58,7 @@ function InstallPage() {
               <Heading as="h2" size="lg" mb={4}>
                 E-Ticaret Sitesi Kurulum Sihirbazı
               </Heading>
-              <Flex justify={"end"} display={"none"}>
-                <Stack spacing={2} direction={"row"}>
-                  <Text>Powered by </Text>
-                  <Link href="https://nextjs.org/" target={"_blank"} passHref>
-                    <Image src={nextJsLogo} height={75} width={75} />
-                  </Link>
-                </Stack>
-              </Flex>
+
             </Flex>
             <ReactFlagsSelect
               selected={flagSelected}
